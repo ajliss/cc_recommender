@@ -1,0 +1,23 @@
+{
+  "short name": "Hilton Surpass",
+  "Groceries": 0.06,
+  "Restaurants": 0.06,
+  "Gas": 0.06,
+  "Hotels": 0.12,
+  "Baseline": 0.03,
+  "Annual Fee": 95,
+  "Credits": {
+    "General": 0,
+    "5th night free": 0
+  },
+  "Sign up Bonus": {
+    "Value": 1300,
+    "Minimum Spend": 2000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Hilton Honors",
+  "Program Type": "Hotels",
+  "Travel Card": true,
+  "Issuer": "American Express",
+  "FTF": 0
+}

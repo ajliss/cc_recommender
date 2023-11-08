@@ -1,0 +1,18 @@
+{
+  "short name": "QS",
+  "Baseline": 0.015,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 200,
+    "Minimum Spend": 500,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Cashback",
+  "Program Type": "Nontransferable",
+  "Travel Card": false,
+  "Issuer": "Capital One",
+  "FTF": 0
+}

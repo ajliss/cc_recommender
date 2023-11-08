@@ -1,0 +1,32 @@
+{
+  "short name": "Redstone",
+  "Dining": {
+    "Restaurant": 0.05,
+    "Doordash": 0.05,
+    "Grubhub": 0.05,
+    "UberEats": 0.05
+  },
+  "Streaming": {
+    "General": 0.03
+  },
+  "Gas": 0.05,
+  "Phone": 0.03,
+  "Utilities": {
+    "General": 0.03
+  },
+  "Baseline": 0.015,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 150,
+    "Minimum Spend": 3000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Cashback",
+  "Program Type": "Nontransferable",
+  "Travel Card": false,
+  "Issuer": "Redstone Credit Union",
+  "FTF": 0.03
+}

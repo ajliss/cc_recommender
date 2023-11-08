@@ -1,0 +1,30 @@
+{
+  "short name": "AA Mile Up",
+  "Groceries": 0.02,
+  "Travel": {
+    "Airlines": {
+      "American Airlines": {
+        "Tickets": 0.02,
+        "Incidentals": {
+          "Bags": 0.02,
+          "Upgrades": 0.02
+        }
+      }
+    }
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 150,
+    "Minimum Spend": 500,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "American AAdvantage",
+  "Program Type": "Airlines",
+  "Travel Card": false,
+  "Issuer": "Citi",
+  "FTF": 0.03
+}

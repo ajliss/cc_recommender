@@ -1,0 +1,46 @@
+{
+  "short name": "Autograph",
+  "Dining": {
+    "Restaurant": 0.03,
+    "Doordash": 0.03,
+    "Grubhub": 0.03,
+    "UberEats": 0.03
+  },
+  "Gas": 0.03,
+  "Streaming": {
+    "General": 0.03
+  },
+  "Travel": {
+    "Airlines": {
+      "Generic": {
+        "General": 0.03,
+        "Tickets": 0.03,
+        "Incidentals": {
+          "Bags": 0.03,
+          "Upgrades": 0.03
+        }
+      }
+    },
+    "Hotels": {
+      "General": 0.03
+    },
+    "Transit": 0.03
+  },
+  "Utilities": {
+    "Phone": 0.03
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 300,
+    "Minimum Spend": 1500,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Cashback",
+  "Program Type": "Nontransferable",
+  "Travel Card": false,
+  "Issuer": "Wells Fargo"
+}

@@ -1,0 +1,16 @@
+{
+  "short name": "Double Cash",
+  "Baseline": 0.02,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 0
+  },
+  "Reward Program": "Citi ThankYou Rewards",
+  "Program Type": "Transferable",
+  "Travel Card": false,
+  "Issuer": "Citi",
+  "FTF": 0.03
+}

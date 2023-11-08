@@ -1,0 +1,34 @@
+{
+  "short name": "SO",
+  "Groceries": 0.03,
+  "Dining": {
+    "Restaurant": 0.03,
+    "Doordash": 0.03,
+    "Grubhub": 0.03,
+    "UberEats": 0.1
+  },
+  "Streaming": {
+    "General": 0.03
+  },
+  "Travel": {
+    "Rideshare": {
+      "Uber": 0.1
+    }
+  },
+  "Entertainment": 0.03,
+  "Baseline": 0.01,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 200,
+    "Minimum Spend": 500,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Cashback",
+  "Program Type": "Nontransferable",
+  "Travel Card": false,
+  "Issuer": "Capital One",
+  "FTF": 0
+}

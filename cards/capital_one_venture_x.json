@@ -1,0 +1,44 @@
+{
+  "short name": "VX",
+  "Travel": {
+    "Airlines": {
+      "Portal": {
+        "General": 0.1,
+        "Tickets": 0.1,
+        "Incidentals": {
+          "Bags": 0.1,
+          "Upgrades": 0.1,
+          "General": 0.1
+        }
+      }
+    },
+    "Hotels": {
+      "Portal": 0.1
+    }
+  },
+  "Baseline": 0.02,
+  "Annual Fee": 395,
+  "Credits": {
+    "General": 100,
+    "Travel": {
+      "Airlines": {
+        "Portal": {
+          "General": 300
+        }
+      }
+    },
+    "Global Entry": {
+      "General": 100
+    }
+  },
+  "Sign up Bonus": {
+    "Value": 750,
+    "Minimum Spend": 4000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Capital One Miles",
+  "Program Type": "Transferable",
+  "Travel Card": true,
+  "Issuer": "Capital One",
+  "FTF": 0
+}

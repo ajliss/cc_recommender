@@ -1,0 +1,22 @@
+{
+  "short name": "Hilton Honors",
+  "Groceries": 0.05,
+  "Restaurants": 0.05,
+  "Gas": 0.05,
+  "Hotels": 0.07,
+  "Baseline": 0.03,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 800,
+    "Minimum Spend": 1000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Hilton Honors",
+  "Program Type": "Hotels",
+  "Travel Card": true,
+  "Issuer": "American Express",
+  "FTF": 0
+}

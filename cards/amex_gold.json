@@ -1,0 +1,43 @@
+{
+  "short name": "Amex Gold",
+  "Groceries": 0.04,
+  "Dining": {
+    "Restaurant": 0.04,
+    "Doordash": 0.04,
+    "Grubhub": 0.04,
+    "UberEats": 0.04
+  },
+  "Travel": {
+    "Airlines": {
+      "Generic": {
+        "General": 0.03,
+        "Tickets": 0.03,
+        "Incidentals": {
+          "Bags": 0.03,
+          "Upgrades": 0.03
+        }
+      }
+    }
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 250,
+  "Credits": {
+    "General": 0,
+    "Uber": {
+      "General":120
+    },
+    "Dining": {
+      "Restaurant": 120
+    }
+  },
+  "Sign up Bonus": {
+    "Value": 600,
+    "Minimum Spend": 4000,
+    "Minimum Spend Window Months": 6
+  },
+  "Reward Program": "American Express Membership Rewards",
+  "Program Type": "Transferable",
+  "Travel Card": false,
+  "Issuer": "American Express",
+  "FTF": 0
+}

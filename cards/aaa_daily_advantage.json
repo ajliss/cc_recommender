@@ -1,0 +1,24 @@
+{
+  "short name": "AAA Daily",
+  "Groceries": 0.05,
+  "Gas": 0.03,
+  "Drugstores": 0.03,
+  "Streaming": {
+    "General": 0.03
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 100,
+    "Minimum Spend": 1000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Cashback",
+  "Program Type": "Nontransferable",
+  "Travel Card": false,
+  "Issuer": "Comenity Bank",
+  "FTF": 0
+}

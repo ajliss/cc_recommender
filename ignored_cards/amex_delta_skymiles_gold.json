@@ -1,0 +1,17 @@
+{
+  "short name": "Delta Gold",
+  "Groceries": 0.02,
+  "Restaurants": 0.02,
+  "Delta": 0.02,
+  "Baseline": 0.01,
+  "Annual Fee": 99,
+  "Credits": {
+    "General": 0.015
+  },
+  "Sign up Bonus": {
+    "Value": 400
+  },
+  "Reward Program": "Delta Skymiles",
+  "Program Type": "Transferable",
+  "Travel Card": false
+}

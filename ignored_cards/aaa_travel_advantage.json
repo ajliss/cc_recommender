@@ -1,0 +1,39 @@
+{
+  "short name": "AAA Travel",
+  "Gas": 0.05,
+  "Groceries": 0.03,
+  "Dining": {
+    "Restaurant": 0.03
+  },
+  "Travel": {
+    "Airlines": {
+      "Generic": {
+        "General": 0.03,
+        "Tickets": 0.03,
+        "Incidentals": {
+          "Bags": 0.03,
+          "Upgrades": 0.03
+        }
+      }
+    },
+    "Hotels": {
+      "General": 0.03
+    },
+    "Car Rentals": 0.03
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 100,
+    "Minimum Spend": 1000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Cashback",
+  "Program Type": "Nontransferable",
+  "Travel Card": false,
+  "Issuer": "Comenity Bank",
+  "FTF": 0
+}

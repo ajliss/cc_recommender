@@ -1,0 +1,24 @@
+{
+  "short name": "Marriott Bevy",
+  "Restaurants": 0.04,
+  "Groceries": 0.04,
+  "Hotels": 0.06,
+  "Baseline": 0.02,
+  "Annual Fee": 250,
+  "Credits": {
+    "General": 0,
+    "Hotels": {
+      "General": 0
+    }
+  },
+  "Sign up Bonus": {
+    "Value": 850,
+    "Minimum Spend": 1000,
+    "Minimum Spend Window Months": 6
+  },
+  "Reward Program": "Marriott Bonvoy",
+  "Program Type": "Hotels",
+  "Travel Card": true,
+  "Issuer": "American Express",
+  "FTF": 0
+}

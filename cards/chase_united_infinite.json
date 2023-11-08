@@ -1,0 +1,68 @@
+{
+  "short name": "United Infinite",
+  "Dining": {
+    "Restaurant": 0.02,
+    "Doordash": 0.02,
+    "Grubhub": 0.02,
+    "UberEats": 0.02
+  },
+  "Travel": {
+    "Airlines": {
+      "Generic": {
+        "General": 0.02,
+        "Tickets": 0.02,
+        "Incidentals": {
+          "Bags": 0.02,
+          "Upgrades": 0.02
+        }
+      },
+      "United": {
+        "Tickets": 0.04,
+        "Incidentals": {
+          "Bags": 0.04,
+          "Upgrades": 0.04
+        }
+      }
+    },
+    "Car Rentals": 0.02,
+    "Hotels": {
+      "General": 0.02
+    },
+    "Ride Share": {
+      "Lyft": 0.02,
+      "Uber": 0.02
+    },
+    "Transit": 0.02  
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 525,
+  "Credits": {
+    "General": 0,
+    "Travel": {
+      "Airlines": {
+        "United": {
+          "General": 0,
+          "Incidentals": {
+            "Bags": 60
+          }
+        }
+      }
+    },
+    "Global Entry": {
+      "General": 100
+    },
+    "United Club": {
+      "General": 650
+    }
+  },
+  "Sign up Bonus": {
+    "Value": 800,
+    "Minimum Spend": 5000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "United MileagePlus",
+  "Program Type": "Airlines",
+  "Travel Card": false,
+  "Issuer": "Chase",
+  "FTF": 0
+}

@@ -1,0 +1,109 @@
+{
+  "short name": "Name",
+  "Dining": {
+    "Restaurant": 0.02,
+    "Doordash": 0.02,
+    "Grubhub": 0.02,
+    "UberEats": 0.02
+  },
+  "Drugstores": 0.02,
+  "Gas": 0.02,
+  "Groceries": 0.02,
+  "Miscellaneous": {
+    "Apple Pay": 0.02,
+    "General": 0.02
+  },
+  "Online Shopping": {
+    "Amazon": 0.02,
+    "Walmart": 0.02,
+    "Retail": 0.02,
+    "Groceries": 0.02
+  },
+  "Streaming": {
+    "Disney/Hulu Bundle": 0.02,
+    "General": 0.02
+  },
+  "Travel": {
+    "Airlines": {
+      "Generic": {
+        "General": 0.02,
+        "Tickets": 0.02,
+        "Incidentals": {
+          "Bags": 0.02,
+          "Upgrades": 0.02
+        }
+      },
+      "Portal": {
+        "General": 0.05,
+        "Tickets": 0.05,
+        "Incidentals": {
+          "Bags": 0.05,
+          "Upgrades": 0.05,
+          "General": 0.05
+        }
+      },
+      "American Airlines": {
+        "Tickets": 0.02,
+        "Incidentals": {
+          "Bags": 0.02,
+          "Upgrades": 0.02
+        }
+      },
+      "Delta": {
+        "Tickets": 0.02,
+        "Incidentals": {
+          "Bags": 0.02,
+          "Upgrades": 0.02
+        }
+      },
+      "Southwest": {
+        "Tickets": 0.02,
+        "Incidentals": {
+          "Bags": 0.02,
+          "Upgrades": 0.02
+        }
+      },
+      "United Airlines": {
+        "Tickets": 0.02,
+        "Incidentals": {
+          "Bags": 0.02,
+          "Upgrades": 0.02
+        }
+      }
+    },
+    "Airbnb": 0.02,
+    "Car Rentals": 0.02,
+    "Hotels": {
+      "General": 0.02,
+      "Portal": 0.05
+    },
+    "Ride Share": {
+      "Lyft": 0.02,
+      "Uber": 0.02
+    },
+    "Transit": 0.02
+  },
+  "Utilities": {
+    "Phone": 0.02,
+    "Internet": 0.02,
+    "Cable": 0.02,
+    "General": 0.02
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 75,
+    "Southwest": {
+      "General": 75,
+      "Upgrades": 120
+    }
+  },
+  "Sign up Bonus": {
+    "Value": 600,
+    "Minimum Spend": 4000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Program",
+  "Travel Card": false,
+  "Issuer": "Bank"
+}

@@ -1,0 +1,16 @@
+{
+  "short name": "Alliant Plat",
+  "Baseline": 0.02,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 0
+  },
+  "Reward Program": "Cashback",
+  "Program Type": "Nontransferable",
+  "Travel Card": false,
+  "Issuer": "Alliant Credit Union",
+  "FTF": 0.03
+}

@@ -1,0 +1,26 @@
+{
+  "short name": "PNC Cash Rewards",
+  "Dining": {
+    "Restaurant": 0.03,
+    "Doordash": 0.03,
+    "Grubhub": 0.03,
+    "UberEats": 0.03
+  },
+  "Gas": 0.04,
+  "Groceries": 0.02,
+  "Baseline": 0.01,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 200,
+    "Minimum Spend": 1000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Cashback",
+  "Program Type": "Nontransferable",
+  "Travel Card": false,
+  "Issuer": "PNC",
+  "FTF": 0.03
+}

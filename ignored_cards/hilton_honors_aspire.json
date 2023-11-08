@@ -1,0 +1,29 @@
+{
+  "short name": "Hilton Aspire",
+  "Restaurants": 0.07,
+  "Airfare": 0.07,
+  "Hotels": 0.14,
+  "Baseline": 0.03,
+  "Annual Fee": 450,
+  "Credits": {
+    "General": 0,
+    "Airline Incidentals": {
+      "General": 0,
+      "Incidentals": 250
+    },
+    "Hotels": {
+      "General": 100,
+      "Free Night": 0
+    }
+  },
+  "Sign up Bonus": {
+    "Value": 1500,
+    "Minimum Spend": 4000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Hilton Honors",
+  "Program Type": "Hotels",
+  "Travel Card": true,
+  "Issuer": "American Express",
+  "FTF": 0
+}

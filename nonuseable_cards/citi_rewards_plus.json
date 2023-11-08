@@ -1,0 +1,22 @@
+{
+  "short name": "Citi Rewards+",
+  "Groceries": 0.02,
+  "Gas": 0.02,
+  "Rent": 0.01,
+  "Baseline": 0.01,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0,
+    "TY points Multipler": 0,
+    "Round up": 0
+  },
+  "Sign up Bonus": {
+    "Value": 200,
+    "Minimum Spend": 1500,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Cashback",
+  "Travel Card": false,
+  "Issuer": "Citi",
+  "FTF": 0.03
+}

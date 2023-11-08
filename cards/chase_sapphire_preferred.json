@@ -1,0 +1,66 @@
+{
+  "short name": "CSP",
+  "Dining": {
+    "Restaurant": 0.031,
+    "Doordash": 0.031,
+    "Grubhub": 0.031,
+    "UberEats": 0.031
+  },
+  "Streaming": {
+    "General": 0.031
+  },
+  "Travel": {
+    "Airlines": {
+      "Generic": {
+        "General": 0.021,
+        "Tickets": 0.021,
+        "Incidentals": {
+          "Bags": 0.021,
+          "Upgrades": 0.021
+        }
+      },
+      "Portal": {
+        "General": 0.051,
+        "Tickets": 0.051,
+        "Incidentals": {
+          "Bags": 0.051,
+          "Upgrades": 0.051,
+          "General": 0.051
+        }
+      }
+    },
+    "Airbnb": 0.021,
+    "Car Rentals": 0.021,
+    "Hotels": {
+      "General": 0.021,
+      "Portal": 0.051
+    },
+    "Ride Share": {
+      "Lyft": 0.051,
+      "Uber": 0.021
+    },
+    "Transit": 0.021
+  },
+  "Baseline": 0.011,
+  "Annual Fee": 95,
+  "Credits": {
+    "General": 0,
+    "Travel": {
+      "Hotels": {
+        "Portal": 50
+      }
+    },
+    "Instacart": 60,
+    "DashPass": 96
+  },
+  "Sign up Bonus": {
+    "Value": 600,
+    "Minimum Spend": 4000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Chase Ultimate Rewards",
+  "Program Type": "Transferable",
+  "Travel Card": false,
+  "Issuer": "Chase",
+  "FTF": 0
+}

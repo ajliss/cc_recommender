@@ -1,0 +1,37 @@
+{
+  "short name": "Venture",
+  "Travel": {
+    "Airlines": {
+      "Portal": {
+        "General": 0.05,
+        "Tickets": 0.05,
+        "Incidentals": {
+          "Bags": 0.05,
+          "Upgrades": 0.05,
+          "General": 0.05
+        }
+      }
+    },
+    "Hotels": {
+      "Portal": 0.05
+    }
+  },
+  "Baseline": 0.02,
+  "Annual Fee": 95,
+  "Credits": {
+    "General": 0,
+    "Global Entry": {
+      "General": 100
+    }
+  },
+  "Sign up Bonus": {
+    "Value": 750,
+    "Minimum Spend": 4000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Capital One Miles",
+  "Program Type": "Transferable",
+  "Travel Card": true,
+  "Issuer": "Capital One",
+  "FTF": 0
+}

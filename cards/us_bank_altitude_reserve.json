@@ -1,0 +1,48 @@
+{
+  "short name": "Altitude Reserve",
+  "Travel": {
+    "Airlines": {
+      "Generic": {
+        "General": 0.03,
+        "Tickets": 0.03,
+        "Incidentals": {
+          "Bags": 0.03,
+          "Upgrades": 0.03
+        }
+      }
+    },
+    "Hotels": {
+      "General": 0.03,
+      "Portal": 0.05
+    },
+    "Car Rentals": 0.03,
+    "Transit": 0.03
+  },
+  "Miscellaneous": {
+    "Apple Pay": 0.03
+  },
+  "Online Shopping": {
+    "Target": 0.03
+  },
+  "Utilities": {
+    "Internet": 0.03
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 400,
+  "Credits": {
+    "General": 325,
+    "Global Entry": {
+      "General": 100
+    }
+  },
+  "Sign up Bonus": {
+    "Value": 500,
+    "Minimum Spend": 4500,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "US Bank Reserve",
+  "Program Type": "Nontransferable",
+  "Travel Card": false,
+  "Issuer": "US Bank",
+  "FTF": 0
+}

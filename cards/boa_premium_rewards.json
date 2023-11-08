@@ -1,0 +1,54 @@
+{
+  "short name": "BOA Premium Rewards",
+  "Dining": {
+    "Restaurant": 0.02,
+    "Doordash": 0.02,
+    "Grubhub": 0.02,
+    "UberEats": 0.02
+  },
+  "Travel": {
+    "Airlines": {
+      "Generic": {
+        "General": 0.02,
+        "Tickets": 0.02,
+        "Incidentals": {
+          "Bags": 0.02,
+          "Upgrades": 0.02
+        }
+      }
+    },
+    "Hotels": {
+      "General": 0.02
+    },
+  "Transit": 0.02,
+  "Car Rentals": 0.02
+  },
+  "Baseline": 0.015,
+  "Annual Fee": 95,
+  "Credits": {
+    "General": 0,
+    "Travel": {
+      "Airlines": {
+        "Generic": {
+          "Airline Incidentals": {
+            "General": 100
+          }
+        }
+      }
+    },
+    "Global Entry": {
+      "General": 100
+    }
+  },
+  "Sign up Bonus": {
+    "Value": 600,
+    "Minimum Spend": 4000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "BOA Rewards",
+  "Program Type": "Nontransferable",
+  "Travel Card": false,
+  "Rewards Value Multiplier": 1,
+  "Issuer": "Bank of America",
+  "FTF": 0
+}

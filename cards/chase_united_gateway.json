@@ -1,0 +1,35 @@
+{
+  "short name": "United Gateway",
+  "Gas": 0.02,
+  "Travel": {
+    "Airlines": {
+      "United": {
+        "Tickets": 0.02,
+        "Incidentals": {
+          "Bags": 0.02,
+          "Upgrades": 0.02
+        }
+      }
+    },
+    "Transit": 0.02,
+    "Ride Share": {
+      "Lyft": 0.02,
+      "Uber": 0.02
+    }
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 200,
+    "Minimum Spend": 1000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "United MileagePlus",
+  "Program Type": "Airlines",
+  "Travel Card": false,
+  "Issuer": "Chase",
+  "FTF": 0
+}

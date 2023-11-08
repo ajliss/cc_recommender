@@ -1,0 +1,39 @@
+{
+  "short name": "Bilt",
+  "Dining": {
+    "Restaurant": 0.03,
+    "Doordash": 0.03,
+    "Grubhub": 0.03,
+    "UberEats": 0.03
+  },
+  "Travel": {
+    "Airlines": {
+      "Generic": {
+        "General": 0.02,
+        "Tickets": 0.02,
+        "Incidentals": {
+          "Bags": 0.02,
+          "Upgrades": 0.02
+        }
+      }
+    },
+    "Hotels": {
+      "General": 0.02
+    },
+    "Car Rentals": 0.02
+  },
+  "Rent": 0.01,
+  "Baseline": 0.01,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 0
+  },
+  "Reward Program": "Bilt",
+  "Program Type": "Transferable",
+  "Travel Card": false,
+  "Issuer": "Wells Fargo",
+  "FTF": 0
+}

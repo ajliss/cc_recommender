@@ -1,0 +1,13 @@
+{
+  "short name": "Pathfinder",
+  "Transit": 0.04,
+  "Airfare": 0.04,
+  "Southwest": 0.04,
+  "Hotels": 0.04,
+  "Baseline": 0.015,
+  "Annual Fee": 0,
+  "Credits": 100,
+  "Sign up Bonus": 500,
+  "Reward Program": "Penfed",
+  "Travel Card": false
+}

@@ -1,0 +1,49 @@
+{
+  "short name": "United Explorer",
+  "Dining": {
+    "Restaurant": 0.02,
+    "Doordash": 0.02,
+    "Grubhub": 0.02,
+    "UberEats": 0.02
+  },
+  "Travel": {
+    "Airlines": {
+      "United": {
+        "Tickets": 0.02,
+        "Incidentals": {
+          "Bags": 0.02,
+          "Upgrades": 0.02
+        }
+      }
+    },
+    "Hotels": {
+      "General": 0.02
+    }
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 95,
+  "Credits": {
+    "General": 0,
+    "Travel": {
+      "United": {
+        "General": 0,
+        "Incidentals": {
+          "Bags": 60
+        }
+      }
+    },
+    "Global Entry": {
+      "General": 100
+    }
+  },
+  "Sign up Bonus": {
+    "Value": 600,
+    "Minimum Spend": 3000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "United MileagePlus",
+  "Program Type": "Airlines",
+  "Travel Card": false,
+  "Issuer": "Chase",
+  "FTF": 0
+}

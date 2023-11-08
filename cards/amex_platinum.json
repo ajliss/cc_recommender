@@ -1,0 +1,62 @@
+{
+  "short name": "Amex Plat",
+  "Travel": {
+    "Airlines": {
+      "Generic": {
+        "General": 0.05,
+        "Tickets": 0.05,
+        "Incidentals": {
+          "Bags": 0.05,
+          "Upgrades": 0.05
+        }
+      }
+    },
+    "Hotels": {
+      "Portal": 0.05
+    }
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 695,
+  "Credits": {
+    "General": 0,
+    "Travel": {
+      "Hotel": {
+        "Portal": 200
+      },
+      "Airlines": {
+        "Generic": {
+          "Airline Incidentals": {
+            "General": 200
+          }
+        }
+      }
+    },
+    "Streaming": {
+      "General": 240
+    },
+    "Walmart+": {
+      "General": 155
+    },
+    "Uber": {
+      "General": 200
+    },
+    "Saks": {
+      "General": 100
+    },
+    "CLEAR": {
+      "General": 189
+    },
+    "Equinox": {
+      "General": 300
+    }
+  },
+  "Sign up Bonus": {
+    "Value": 800,
+    "Minimum Spend": 8000,
+    "Minimum Spend Window Months": 6
+  },
+  "Reward Program": "American Express Membership Rewards",
+  "Program Type": "Transferable",
+  "Travel Card": true,
+  "Issuer": "American Express"
+}

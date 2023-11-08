@@ -1,0 +1,22 @@
+{
+  "short name": "US Bank Cash+",
+  "Gas": 0.02,
+  "Utilities": {
+    "General": 0.05
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 200,
+    "Minimum Spend": 1000,
+    "Minimum Spend Window Months": 4
+  },
+  "Reward Program": "Cashback",
+  "Program Type": "Nontransferable",
+  "Travel Card": false,
+  "Issuer": "US Bank",
+  "FTF": 0.03
+}

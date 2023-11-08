@@ -1,0 +1,50 @@
+{
+  "short name": "Southwest Premier",
+  "Streaming": {
+    "General": 0.02
+  },
+  "Travel": {
+    "Airlines": {
+      "Southwest": {
+        "Tickets": 0.03,
+        "Incidentals": {
+          "Bags": 0.03,
+          "Upgrades": 0.03
+        }
+      }
+    },
+    "Ride Share": {
+      "Lyft": 0.02,
+      "Uber": 0.02
+    },
+    "Transit": 0.02
+  },
+  "Utilities": {
+    "Phone": 0.02,
+    "Internet": 0.02,
+    "Cable": 0.02
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 99,
+  "Credits": {
+    "General": 0,
+    "Travel": {
+      "Southwest": {
+        "General": 60,
+        "Incidentals": {
+          "Upgrades": 30
+        }
+      }
+    }
+  },
+  "Sign up Bonus": {
+    "Value": 500,
+    "Minimum Spend": 1000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Southwest Rapid Rewards",
+  "Program Type": "Airlines",
+  "Travel Card": true,
+  "Issuer": "Chase",
+  "FTF": 0
+}
