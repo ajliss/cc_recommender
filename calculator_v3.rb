@@ -10,6 +10,7 @@ class RewardsCalculatorV3
     @reward_programs_points_values = opts.fetch(:reward_programs_points_values, {})
     @ineligible_cards = opts.fetch(:ineligible_cards, {})
     @ineligible_subs = opts.fetch(:ineligible_subs, {})
+    @required_cards = opts.fetch(:required_cards, {})
   end
 
   def run(combo_size)
@@ -28,20 +29,27 @@ class RewardsCalculatorV3
     combinations = []
     Dir.each_child('Cards') do |x|
       card = JSON.parse(File.read(File.open(File.join(File.expand_path('./cards'), x))))
+
+      next if @flags['Ineligible cards'] && @ineligible_cards[card['short name']]
+      next if !@flags['AF'] && card['Annual Fee'].positive?
+
       card_rewards_hash = {}
-      card_credits_hash = {}
-      building_spending_profile(card, card_rewards_hash, card_credits_hash, @spending, [])
+      building_spending_profile(card, card_rewards_hash, {}, @spending, [])
       card['spending'] = card_rewards_hash
       cards << card
-      # cards << JSON.parse(File.read(File.open(File.join(File.expand_path('./cards'), x))))
     end
     cards.combination(size) { |pair| combinations << pair }
-    unless @flags['AF']
-      combinations.reject! do |combo|
-        combo.any? { |c| c['Annual Fee'].positive? }
-      end
+    filter_combinations(combinations)
+  end
+
+  def filter_combinations(combinations)
+    return combinations unless @flags['Required cards']
+
+    combinations.filter do |combo|
+      required_card_names = @required_cards.each_pair.map { |a| a[0] if a[1] }.compact
+      combo_names = combo.map { |c| c['short name'] }
+      (required_card_names - combo_names).empty?
     end
-    combinations
   end
 
   def building_spending_profile(card, card_rewards_hash, credits_hash, spending_hash, keys)
