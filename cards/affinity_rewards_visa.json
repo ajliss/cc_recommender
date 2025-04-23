@@ -1,0 +1,37 @@
+{
+  "short name": "Affinity Rewards",
+  "Groceries": 0.02,
+  "Dining": {
+    "Restaurant": 0.02,
+    "Doordash": 0.05,
+    "Grubhub": 0.05,
+    "UberEats": 0.05
+  },
+  "Online Shopping": {
+    "Amazon.com": 0.05
+  },
+  "Streaming": {
+    "Netflix": 0.02,
+    "Spotify": 0.02
+  },
+  "Ride Share": {
+    "Lyft": 0.02,
+    "Uber": 0.02
+  },
+  "Gas": 0.02,
+  "Baseline": 0.01,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 150,
+    "Minimum Spend": 3000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Cashback",
+  "Program Type": "Nontransferable",
+  "Travel Card": false,
+  "Issuer": "Affinity Federal Credit Union",
+  "FTF": 0
+}

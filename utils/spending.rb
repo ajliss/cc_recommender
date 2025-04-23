@@ -1,36 +1,39 @@
+# frozen_string_literal: true
+
 module Utils
   class Spending
     def self.monthly
       {
         'Dining' => {
-          'Restaurant' => 120,
+          'Restaurant' => 180,
           'Doordash' => 0,
           'Grubhub' => 0,
           'UberEats' => 0
         },
         'Drugstores' => 0,
-        'Gas' => 15,
-        'Groceries' => 10,
+        'Gas' => 0,
+        'Groceries' => 100,
         'Miscellaneous' => {
-          'Apple Pay' => 150,
-          'General' => 230
+          'Apple Pay' => 1000,
+          'General' => 200
         },
         'Online Shopping' => {
-          'Amazon.com' => 15,
+          'Amazon.com' => 0,
           'Walmart.com' => 0,
-          'Online Retail' => 10,
+          'Online Retail' => 0,
           'Groceries.com' => 0,
           'Target' => 0
         },
         'Streaming' => {
           'Disney/Hulu Bundle' => 0,
-          'Netflix' => 22
+          'Netflix' => 26,
+          'Spotify' => 0
         },
         'Travel' => {
           'Airlines' => {
             # TODO: Add individual airlines
             'Generic' => {
-              'General' => 200,
+              'General' => 100,
               'Tickets' => 0,
               'Incidentals' => {
                 'Bags' => 0,
@@ -76,7 +79,7 @@ module Utils
               }
             }
           },
-          'Airbnb' => 20,
+          'Airbnb' => 100,
           'Car Rentals' => 0,
           'Hotels' => {
             'General' => 0,
@@ -91,16 +94,16 @@ module Utils
             'Wyndham Rewards' => 0
           },
           'Ride Share' => {
-            'Lyft' => 5,
+            'Lyft' => 0,
             'Uber' => 0
           },
-          'Transit' => 10
+          'Transit' => 0
         },
         'Utilities' => {
-          'Phone' => 25,
-          'Internet' => 60,
+          'Phone' => 0,
+          'Internet' => 0,
           'Cable' => 0,
-          'General' => 0
+          'General' => 135
         }
       }
     end

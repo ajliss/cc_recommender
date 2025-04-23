@@ -92,8 +92,6 @@ class RewardsCalculatorV3
   end
 
   def add_rewards_value_to_object(cards, key, rewards_obj)
-    # first_card_value = category_value(cards.first, keys)
-    # second_card_value = category_value(cards.last, keys)
     rewards_values = cards.map do |card|
       [card['short name'], category_value(card, key)]
     end.max { |a, b| a[1] <=> b[1] }
@@ -112,7 +110,7 @@ class RewardsCalculatorV3
       rewards_arr[0] * @reward_programs_points_values['Nontransferable'][card['Reward Program']] + rewards_arr[1]
     when 'Transferable'
       if @flags['Cashback only']
-        rewards_arr.sum
+        rewards_arr[0] * @reward_programs_points_values['Transferable'][card['Reward Program']]['Cashback'] + rewards_arr[1]
       else
         rewards_arr[0] * @reward_programs_points_values['Transferable'][card['Reward Program']]['Generic Value'] + rewards_arr[1]
       end

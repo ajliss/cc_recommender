@@ -1,0 +1,34 @@
+{
+  "short name": "UMB Travel",
+  "Travel": {
+    "Airlines": {
+      "Generic": {
+        "General": 0.03,
+        "Tickets": 0.03,
+        "Incidentals": {
+          "Bags": 0.03,
+          "Upgrades": 0.03
+        }
+      }
+    },
+    "Hotels": {
+      "General": 0.03
+    },
+    "Car Rentals": 0.03
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 0,
+  "Credits": {
+    "General": 0
+  },
+  "Sign up Bonus": {
+    "Value": 150,
+    "Minimum Spend": 1500,
+    "Minimum Spend Window": 1.5
+  },
+  "Reward Program": "Cashback",
+  "Program Type": "Nontransferable",
+  "Travel Card": false,
+  "Issuer": "UMB",
+  "FTF": 0.02
+}

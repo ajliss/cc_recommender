@@ -3,12 +3,12 @@
   "Travel": {
     "Airlines": {
       "Portal": {
-        "General": 0.1,
-        "Tickets": 0.1,
+        "General": 0.05,
+        "Tickets": 0.05,
         "Incidentals": {
-          "Bags": 0.1,
-          "Upgrades": 0.1,
-          "General": 0.1
+          "Bags": 0.05,
+          "Upgrades": 0.05,
+          "General": 0.05
         }
       }
     },

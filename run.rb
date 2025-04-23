@@ -9,7 +9,7 @@ class Run
   def self.flags
     {
       'AF' => true,
-      'Cashback only' => false,
+      'Cashback only' => true,
       'Credits' => true,
       'Sign up Bonus' => true,
       'SUB from normal spend' => false,
@@ -22,8 +22,10 @@ class Run
     {
       'A+' => false,
       'Altitude Reserve' => false,
-      'Autograph' => true,
-      'Bilt' => true
+      'Autograph' => false,
+      'Bilt' => false,
+      'VX' => false,
+      'SO' => true
     }
   end
 
@@ -31,11 +33,13 @@ class Run
     {
       'Altitude Reserve' => true,
       'Altitude Go' => true,
-      'BCE' => true,
-      'BCP' => true,
+      # 'BCE' => true,
+      # 'BCP' => true,
       'CSP' => true,
       'CSR' => true,
-      'SO' => true
+      'SO' => true,
+      'Amex Plat' => true,
+      'Amex Gold' => true
     }
   end
 
@@ -43,8 +47,9 @@ class Run
     {
       'Altitude Reserve' => false,
       'Altitude Go' => false,
-      'BCE' => false,
-      'SO' => true
+      'BCE' => true,
+      'Bilt' => true,
+      'SO' => false
     }
   end
 

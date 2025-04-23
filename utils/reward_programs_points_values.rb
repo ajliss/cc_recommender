@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Utils
   class ProgramValues
     def self.values
@@ -74,7 +76,7 @@ module Utils
               'Virgin Atlantic Flying Club' => 1.3
             },
             'Generic Value' => 1.45,
-            'Cashback' => 0.7,
+            'Cashback' => 0.5,
             'Hotel Partners' => {
               'Choice Privileges' => 0.68,
               'Wyndham Rewards' => 0.88

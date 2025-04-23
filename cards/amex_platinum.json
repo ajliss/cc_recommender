@@ -51,12 +51,13 @@
     }
   },
   "Sign up Bonus": {
-    "Value": 800,
+    "Value": 1750,
     "Minimum Spend": 8000,
     "Minimum Spend Window Months": 6
   },
   "Reward Program": "American Express Membership Rewards",
   "Program Type": "Transferable",
   "Travel Card": true,
-  "Issuer": "American Express"
+  "Issuer": "American Express",
+  "FTF": 0
 }
