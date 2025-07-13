@@ -20,8 +20,10 @@ class RewardsCalculatorV3
     reward_hashes = calculate_rewards(combos)
     # rank
     rankings = calculate_rankings(reward_hashes)
+
+    spending_total = sum_spending
     # print result
-    print(rankings)
+    print(rankings, spending_total)
   end
 
   def get_cc_combinations(size)
@@ -236,21 +238,43 @@ class RewardsCalculatorV3
     line + contributions
   end
 
-  def print(rankings)
-    print_set('One Year Ranking:', rankings['one_year_ranking'])
-    print_set("\nThree Year Ranking:", rankings['three_year_ranking'])
-    print_set("\nFive Year Ranking:", rankings['five_year_ranking'])
-    print_set("\nTen Year Ranking:", rankings['ten_year_ranking'])
-    print_set("\nThree Year Ranking, No SUBs:", rankings['three_year_ranking_no_subs'])
-    print_set("\nTen Year Ranking, No SUBs:", rankings['ten_year_ranking_no_subs'])
+  def sum_spending
+    arr = []
+    @spending.each_value do |val|
+      if val.instance_of?(::Hash)
+        find_ints(val, arr)
+      else
+        arr << val
+      end
+    end
+    arr.sum * 12
   end
 
-  def print_set(title, ranks)
+  def find_ints(obj, arr)
+    obj.each_value do |val|
+      if val.instance_of?(::Hash)
+        find_ints(val, arr)
+      else
+        arr << val
+      end
+    end
+  end
+
+  def print(rankings, spending_total)
+    print_set('One Year Ranking:', rankings['one_year_ranking'], spending_total, 1)
+    print_set("\nThree Year Ranking:", rankings['three_year_ranking'], spending_total, 3)
+    print_set("\nFive Year Ranking:", rankings['five_year_ranking'], spending_total, 5)
+    print_set("\nTen Year Ranking:", rankings['ten_year_ranking'], spending_total, 10)
+    print_set("\nThree Year Ranking, No SUBs:", rankings['three_year_ranking_no_subs'], spending_total, 3)
+    print_set("\nTen Year Ranking, No SUBs:", rankings['ten_year_ranking_no_subs'], spending_total, 10)
+  end
+
+  def print_set(title, ranks, spending_total, years)
     puts title
     10.times.each do |idx|
       break if ranks[idx].nil?
 
-      puts ranks[idx].join(' - ')
+      puts "#{ranks[idx].join(' - ')}, Rate: #{(ranks[idx].first / (spending_total * years) * 100).round(2)}%"
     end
   end
 end
