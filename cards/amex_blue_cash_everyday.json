@@ -1,12 +1,14 @@
 {
   "short name": "BCE",
-  "Groceries": 0.03,
+  "Groceries": {
+    "General": 0.03
+  },
   "Gas": 0.03,
   "Online Shopping": {
-    "Amazon": 0.03,
-    "Walmart": 0.03,
+    "Amazon.com": 0.03,
+    "Walmart.com": 0.03,
     "Retail": 0.03,
-    "Groceries": 0.03
+    "Groceries.com": 0.03
   },
   "Baseline": 0.01,
   "Annual Fee": 0,

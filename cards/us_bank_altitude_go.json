@@ -1,6 +1,8 @@
 {
   "short name": "Altitude Go",
-  "Groceries": 0.02,
+  "Groceries": {
+    "General": 0.02
+  },
   "Dining": {
     "Restaurant": 0.04,
     "Doordash": 0.04,
@@ -28,5 +30,5 @@
   "Program Type": "Nontransferable",
   "Travel Card": false,
   "Issuer": "US Bank",
-  "FTF": 0
+  "FTF": 3
 }

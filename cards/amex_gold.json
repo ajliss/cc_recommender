@@ -1,6 +1,8 @@
 {
   "short name": "Amex Gold",
-  "Groceries": 0.04,
+  "Groceries": {
+    "General": 0.04
+  },
   "Dining": {
     "Restaurant": 0.04,
     "Doordash": 0.04,

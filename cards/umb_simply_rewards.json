@@ -1,6 +1,8 @@
 {
   "short name": "UMB Simply",
-  "Groceries": 0.03,
+  "Groceries": {
+    "General": 0.03
+  },
   "Gas": 0.03,
   "Dining": {
     "Restaurant": 0.03,

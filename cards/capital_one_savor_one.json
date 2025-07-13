@@ -1,6 +1,8 @@
 {
   "short name": "SO",
-  "Groceries": 0.03,
+  "Groceries": {
+    "General": 0.03
+  },
   "Dining": {
     "Restaurant": 0.03,
     "Doordash": 0.03,

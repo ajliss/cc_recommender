@@ -2,7 +2,10 @@
   "short name": "US Bank Cash+",
   "Gas": 0.02,
   "Utilities": {
-    "General": 0.05
+    "General": 0.05,
+    "Internet": 0.05,
+    "Apple Pay": 0.05,
+    "Cable": 0
   },
   "Baseline": 0.01,
   "Annual Fee": 0,

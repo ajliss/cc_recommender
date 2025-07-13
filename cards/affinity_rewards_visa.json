@@ -1,6 +1,8 @@
 {
   "short name": "Affinity Rewards",
-  "Groceries": 0.02,
+  "Groceries": {
+    "General": 0.02
+  },
   "Dining": {
     "Restaurant": 0.02,
     "Doordash": 0.05,

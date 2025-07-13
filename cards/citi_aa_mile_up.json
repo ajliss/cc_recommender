@@ -1,6 +1,8 @@
 {
   "short name": "AA Mile Up",
-  "Groceries": 0.02,
+  "Groceries": {
+    "General": 0.02
+  },
   "Travel": {
     "Airlines": {
       "American Airlines": {

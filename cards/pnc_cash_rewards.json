@@ -7,7 +7,9 @@
     "UberEats": 0.03
   },
   "Gas": 0.04,
-  "Groceries": 0.02,
+  "Groceries": {
+    "General": 0.02
+  },
   "Baseline": 0.01,
   "Annual Fee": 0,
   "Credits": {
