@@ -106,13 +106,13 @@ module Utils
           },
           'Citi ThankYou Rewards' => {
             'Airline Partners' => {
-              'Aeromexico' => 0,
+              'Air France/KLM Flying Blue Miles' => 0 * 1.25,
               'Accor Live Limitless' => 0 * 0.5,
+              'Aeromexico' => 0,
               'Avianca Lifemiles' => 0,
               'Emirates Skywards Miles' => 0,
               'Etihad Guest' => 0,
               'EVA Air' => 0,
-              'Air France/KLM Flying Blue Miles' => 0 * 1.25,
               'JetBlue TrueBlue' => 0,
               'Qantas Frequent Flyer' => 0,
               'Qatar Privilege Club' => 0,
@@ -126,6 +126,22 @@ module Utils
             'Hotel Partners' => {
               'Wyndham Rewards' => 0,
               'Choice Privileges' => 0 * 1.2
+            }
+          },
+          'Wells Fargo Points' => {
+            'Airline Partners' => {
+              'Aer Lingus AerClub' => 0,
+              'Air France-KLM Flying Blue Miles' => 0,
+              'Avianca Lifemiles' => 0,
+              'British Airways Avios' => 0,
+              'Iberia Avios' => 0,
+              'Virgin Atlantic Flying Club' => 0,
+              'Virgin Red' => 0
+            },
+            'Generic Value' => 1.4,
+            'Cashback' => 1,
+            'Hotel Partners' => {
+              'Choice Privileges' => 0 * 2
             }
           }
         },

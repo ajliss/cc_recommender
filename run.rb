@@ -2,6 +2,7 @@
 
 require 'pry'
 require './calculator_v3'
+require './calculator_v4'
 require './utils/spending'
 require './utils/reward_programs_points_values'
 
@@ -9,12 +10,13 @@ class Run
   def self.flags
     {
       'AF' => true,
-      'Cashback only' => true,
+      'Cashback only' => false,
       'Credits' => true,
       'Sign up Bonus' => true,
       'SUB from normal spend' => false,
       'Required cards' => false,
-      'Ineligible cards' => true
+      'Ineligible cards' => true,
+      'Single Travel card' => true
     }
   end
 
@@ -25,36 +27,39 @@ class Run
       'Autograph' => false,
       'Bilt' => false,
       'VX' => false,
-      'SO' => true
+      'SO' => false
     }
   end
 
   def self.ineligible_subs
     {
       'Altitude Reserve' => true,
-      'Altitude Go' => true,
+      'Altitude Go' => false,
       # 'BCE' => true,
       # 'BCP' => true,
-      'CSP' => true,
-      'CSR' => true,
-      'SO' => true,
-      'Amex Plat' => true,
-      'Amex Gold' => true
+      'CSP' => false,
+      'CSR' => false,
+      'SO' => false,
+      'Amex Plat' => false,
+      'Amex Gold' => false
     }
   end
 
   def self.ineligible_cards
     {
-      'Altitude Reserve' => false,
+      # 'A+' => true,
+      'Altitude Reserve' => true,
       'Altitude Go' => false,
-      'BCE' => true,
+      'BCE' => false,
       'Bilt' => true,
-      'SO' => false
+      'SO' => false,
+      'Amex Plat' => false,
+      'Amex Gold' => false
     }
   end
 
   def self.run(combo_size)
-    calulator = RewardsCalculatorV3.new(
+    calulator = RewardsCalculatorV4.new(
       {
         flags:,
         spending: Utils::Spending.monthly,
