@@ -1,0 +1,45 @@
+{
+  "short name": "Strata Elite",
+  "Dining": {
+    "Restaurant": 0.03
+  },
+  "Travel": {
+    "Airlines": {
+      "Portal": {
+        "General": 0.06
+      }
+    },
+    "Hotels": {
+      "Portal": 0.12
+    }
+  },
+  "Baseline": 0.015,
+  "Annual Fee": 595,
+  "Credits": {
+    "Travel": {
+      "Airlines": {
+        "American Airlines": {
+          "Tickets": [200, true, 12, 13, 200, "Cashback", "Nontransferable"]
+        }
+      },
+      "Hotels": {
+        "General": [300, true, 12, 13, 300, "Cashback", "Nontransferable"]
+      }
+    },
+    "Global Entry": {
+      "General": [120, true, 12, 13, 120, "Cashback", "Nontransferable"]
+    },
+     "Priority Pass Select": [469, true, 12, 13, 469, "Cashback", "Nontransferable"]
+  },
+  "Sign up Bonus": {
+    "Cash Value": 0,
+    "Points Value": 800,
+    "Minimum Spend": 4000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Citi ThankYou Rewards",
+  "Program Type": "Transferable",
+  "Travel Card": true,
+  "Issuer": "Citi",
+  "FTF": 0
+}

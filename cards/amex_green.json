@@ -28,16 +28,13 @@
   "Baseline": 0.01,
   "Annual Fee": 150,
   "Credits": {
-    "General": 0,
     "CLEAR": {
-      "General": 189
-    },
-    "LoungeBuddy": {
-      "General": 100
+      "General": [209, true, 12, 13, 209, "Cashback", "Nontransferable"]
     }
   },
   "Sign up Bonus": {
-    "Value": 400,
+    "Cash Value": 0,
+    "Points Value": 400,
     "Minimum Spend": 3000,
     "Minimum Spend Window Months": 6
   },

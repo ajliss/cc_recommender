@@ -1,23 +1,27 @@
 {
-  "short name": "CFU",
+  "short name": "NFCU More Rewards",
+  "Online Shopping": {
+    "Walmart.com": 0.03,
+    "Target": 0.03
+  },
+  "Gas": 0.03,
   "Dining": {
     "Restaurant": 0.03,
     "Doordash": 0.03,
     "Grubhub": 0.03,
     "UberEats": 0.03
   },
-  "Drugstores": 0.03,
-  "Baseline": 0.015,
+  "Baseline": 0.01,
   "Annual Fee": 0,
   "Sign up Bonus": {
     "Cash Value": 200,
-    "Points Value": 0,
-    "Minimum Spend": 500,
+    "Points Value": 200,
+    "Minimum Spend": 2000,
     "Minimum Spend Window Months": 3
   },
   "Reward Program": "Cashback",
   "Program Type": "Nontransferable",
   "Travel Card": false,
-  "Issuer": "Chase",
-  "FTF": 0.03
+  "Issuer": "American Express",
+  "FTF": 0.02
 }

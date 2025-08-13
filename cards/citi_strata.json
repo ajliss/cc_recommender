@@ -1,12 +1,8 @@
 {
-  "short name": "FNBO Getaway",
+  "short name": "Strata",
   "Dining": {
-    "Restaurant": 0.03,
-    "Doordash": 0.03,
-    "Grubhub": 0.03,
-    "UberEats": 0.03
+    "Restaurant": 0.02
   },
-  "Gas": 0.03,
   "Travel": {
     "Airlines": {
       "Generic": {
@@ -16,22 +12,29 @@
           "Bags": 0.03,
           "Upgrades": 0.03
         }
+      },
+      "Portal": {
+        "General": 0.05
       }
     },
     "Hotels": {
-      "General": 0.03
+      "General": 0.03,
+      "Portal": 0.05
     },
-    "Transit": 0.03
+    "Car Rentals": 0.03
   },
+  "Gas": 0.03,
   "Baseline": 0.01,
   "Annual Fee": 0,
   "Sign up Bonus": {
     "Cash Value": 0,
-    "Points Value": 0
+    "Points Value": 300,
+    "Minimum Spend": 1000,
+    "Minimum Spend Window Months": 3
   },
-  "Reward Program": "Cashback",
-  "Program Type": "Nontransferable",
+  "Reward Program": "Citi ThankYou Rewards",
+  "Program Type": "Transferable",
   "Travel Card": true,
-  "Issuer": "FNBO",
+  "Issuer": "Citi",
   "FTF": 0
 }

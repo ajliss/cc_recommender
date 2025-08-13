@@ -1,15 +1,16 @@
 {
   "short name": "Southwest Priority",
-  "Streaming": {
-    "General": 0.02
+  "Dining": {
+    "Restaurant": 0.02
   },
+  "Gas": 0.02,
   "Travel": {
     "Airlines": {
       "Southwest": {
-        "Tickets": 0.03,
+        "Tickets": 0.04,
         "Incidentals": {
-          "Bags": 0.03,
-          "Upgrades": 0.03
+          "Bags": 0.04,
+          "Upgrades": 0.04
         }
       }
     },
@@ -25,26 +26,27 @@
     "Cable": 0.02
   },
   "Baseline": 0.01,
-  "Annual Fee": 149,
+  "Annual Fee": 229,
   "Credits": {
-    "General": 0,
+    "General": [75, true, 12, 13, 75, "Southwest Rapid Rewards", "Airlines"],
     "Travel": {
       "Southwest": {
-        "General": 150,
         "Incidentals": {
-          "Upgrades": 60
+          "Upgrades": [60, true, 1, 2, 60, "Cashback", "Nontransferable"],
+          "Bags": [70, true, 1, 2, 70, "Cashback", "Nontransferable"]
         }
       }
     }
   },
   "Sign up Bonus": {
-    "Value": 500,
-    "Minimum Spend": 1000,
+    "Cash Value": 0,
+    "Points Value": 1000,
+    "Minimum Spend": 4000,
     "Minimum Spend Window Months": 3
   },
   "Reward Program": "Southwest Rapid Rewards",
   "Program Type": "Airlines",
-  "Travel Card": false,
+  "Travel Card": true,
   "Issuer": "Chase",
   "FTF": 0
 }

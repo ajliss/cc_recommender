@@ -12,15 +12,9 @@
   },
   "Baseline": 0.01,
   "Annual Fee": 0,
-  "Credits": {
-    "General": 0,
-    "Streaming": {
-      "General": 0,
-      "Disney Bundle": 84
-    }
-  },
   "Sign up Bonus": {
-    "Value": 200,
+    "Cash Value": 200,
+    "Points Value": 0,
     "Minimum Spend": 2000,
     "Minimum Spend Window Months": 6
   },

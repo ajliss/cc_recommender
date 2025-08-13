@@ -16,13 +16,13 @@
   "Baseline": 0.01,
   "Annual Fee": 0,
   "Credits": {
-    "General": 0,
     "Streaming": {
-      "General": 15
+      "Netflix": [15, true, 12, 13, 15, "Cashback", "Nontransferable"]
     }
   },
   "Sign up Bonus": {
-    "Value": 200,
+    "Cash Value": 200,
+    "Points Value": 0,
     "Minimum Spend": 1000,
     "Minimum Spend Window Months": 3
   },

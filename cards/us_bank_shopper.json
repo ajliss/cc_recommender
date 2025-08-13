@@ -9,11 +9,9 @@
   },
   "Baseline": 0.015,
   "Annual Fee": 95,
-  "Credits": {
-    "General": 0
-  },
   "Sign up Bonus": {
-    "Value": 250,
+    "Cash Value": 250,
+    "Points Value": 0,
     "Minimum Spend": 2000,
     "Minimum Spend Window Months": 3
   },

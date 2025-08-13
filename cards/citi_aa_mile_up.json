@@ -16,17 +16,15 @@
   },
   "Baseline": 0.01,
   "Annual Fee": 0,
-  "Credits": {
-    "General": 0
-  },
   "Sign up Bonus": {
-    "Value": 150,
+    "Cash Value": 0,
+    "Points Value": 150,
     "Minimum Spend": 500,
     "Minimum Spend Window Months": 3
   },
   "Reward Program": "American AAdvantage",
   "Program Type": "Airlines",
-  "Travel Card": false,
+  "Travel Card": true,
   "Issuer": "Citi",
   "FTF": 0.03
 }

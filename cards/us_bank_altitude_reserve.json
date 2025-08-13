@@ -34,17 +34,24 @@
   "Baseline": 0.01,
   "Annual Fee": 400,
   "Credits": {
-    "General": 325,
+    "Travel": {
+      "Airlines": {
+        "Portal": {
+          "General": [325, true, 12, 13, 325, "US Bank", "Nontransferable"]
+        }
+      }
+    },
     "Global Entry": {
       "General": 100
     }
   },
   "Sign up Bonus": {
-    "Value": 500,
+    "Cash Value": 0,
+    "Points Value": 0,
     "Minimum Spend": 4500,
     "Minimum Spend Window Months": 3
   },
-  "Reward Program": "US Bank Reserve",
+  "Reward Program": "US Bank",
   "Program Type": "Nontransferable",
   "Travel Card": false,
   "Issuer": "US Bank",

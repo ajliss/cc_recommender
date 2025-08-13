@@ -4,10 +4,10 @@
   "Travel": {
     "Airlines": {
       "United": {
-        "Tickets": 0.02,
+        "Tickets": 0.07,
         "Incidentals": {
-          "Bags": 0.02,
-          "Upgrades": 0.02
+          "Bags": 0.07,
+          "Upgrades": 0.07
         }
       }
     },
@@ -19,17 +19,15 @@
   },
   "Baseline": 0.01,
   "Annual Fee": 0,
-  "Credits": {
-    "General": 0
-  },
   "Sign up Bonus": {
-    "Value": 200,
+    "Cash Value": 200,
+    "Points Value": 200,
     "Minimum Spend": 1000,
     "Minimum Spend Window Months": 3
   },
   "Reward Program": "United MileagePlus",
   "Program Type": "Airlines",
-  "Travel Card": false,
+  "Travel Card": true,
   "Issuer": "Chase",
   "FTF": 0
 }

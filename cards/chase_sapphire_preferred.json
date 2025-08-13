@@ -36,31 +36,29 @@
       "Portal": 0.051
     },
     "Ride Share": {
-      "Lyft": 0.021,
-      "Uber": 0.021
+      "Lyft": 0.051
     },
     "Transit": 0.021
   },
   "Baseline": 0.011,
   "Annual Fee": 95,
   "Credits": {
-    "General": 0,
     "Travel": {
       "Hotels": {
-        "Portal": 50
+        "Portal": [50, true, 6, 7, 50, "Cashback", "Nontransferable"]
       }
     },
-    "Instacart": 60,
-    "DashPass": 96
+    "DashPass": [10, true, 1, 2, 10, "Cashback", "Nontransferable"]
   },
   "Sign up Bonus": {
-    "Value": 600,
-    "Minimum Spend": 4000,
+    "Cash Value": 0,
+    "Points Value": 750,
+    "Minimum Spend": 5000,
     "Minimum Spend Window Months": 3
   },
   "Reward Program": "Chase Ultimate Rewards",
   "Program Type": "Transferable",
-  "Travel Card": false,
+  "Travel Card": true,
   "Issuer": "Chase",
   "FTF": 0
 }

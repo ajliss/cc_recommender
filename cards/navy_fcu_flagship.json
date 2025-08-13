@@ -1,0 +1,41 @@
+{
+  "short name": "NFCU Flagship",
+  "Travel": {
+    "Airlines": {
+      "Generic": {
+        "General": 0.03,
+        "Tickets": 0.03,
+        "Incidentals": {
+          "Bags": 0.03,
+          "Upgrades": 0.03
+        }
+      }
+    },
+    "Hotels": {
+      "General": 0.03
+    },
+    "Car Rentals": 0.03,
+    "Ride Share": {
+      "Lyft": 0.03,
+      "Uber": 0.03
+    }
+  },
+  "Baseline": 0.02,
+  "Annual Fee": 0,
+  "Credits": {
+    "Global Entry": {
+      "General": [120, true, 12, 13, 120, "Cashback", "Nontransferable"]
+    }
+  },
+  "Sign up Bonus": {
+    "Cash Value": 489,
+    "Points Value": 489,
+    "Minimum Spend": 3500,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "Cashback",
+  "Program Type": "Nontransferable",
+  "Travel Card": false,
+  "Issuer": "Navy Federal Credit Union",
+  "FTF": 0.02
+}

@@ -1,10 +1,7 @@
 {
   "short name": "AA Plat Select",
   "Dining": {
-    "Restaurant": 0.02,
-    "Doordash": 0.02,
-    "Grubhub": 0.02,
-    "UberEats": 0.02
+    "Restaurant": 0.02
   },
   "Gas": 0.02,
   "Travel": {
@@ -21,26 +18,25 @@
   "Baseline": 0.01,
   "Annual Fee": 99,
   "Credits": {
-    "General": 0,
     "Travel": {
       "Airlines": {
         "American Airlines": {
-          "General": 0,
           "Incidentals": {
-            "Bags": 60
+            "Bags": [60, true, 1, 2, 60, "Cashback", "Nontransferable"]
           }
         }
       }
     }
   },
   "Sign up Bonus": {
-    "Value": 599,
+    "Cash Value": 99,
+    "Points Value": 800,
     "Minimum Spend": 2500,
     "Minimum Spend Window Months": 3
   },
   "Reward Program": "American AAdvantage",
   "Program Type": "Airlines",
-  "Travel Card": false,
+  "Travel Card": true,
   "Issuer": "Citi",
   "FTF": 0
 }

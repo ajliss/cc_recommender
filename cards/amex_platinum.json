@@ -18,40 +18,37 @@
   "Baseline": 0.01,
   "Annual Fee": 695,
   "Credits": {
-    "General": 0,
     "Travel": {
       "Hotel": {
-        "Portal": 200
+        "Portal": [200, true, 12, 13, 200, "Cashback", "Nontransferable"]
       },
       "Airlines": {
         "Generic": {
           "Airline Incidentals": {
-            "General": 200
+            "General": [200, true, 12, 13, 200, "Cashback", "Nontransferable"]
           }
         }
       }
     },
     "Streaming": {
-      "General": 240
+      "Disney": [20, true, 1, 2, 20, "Cashback", "Nontransferable"]
     },
     "Walmart+": {
-      "General": 155
+      "General": [12.95, true, 1, 2, 12.95, "Cashback", "Nontransferable"]
     },
     "Uber": {
-      "General": 200
+      "General": [16.67, true, 1, 2, 16.67, "Cashback", "Nontransferable"]
     },
     "Saks": {
-      "General": 100
+      "General": [50, true, 6, 7, 50, "Cashback", "Nontransferable"]
     },
     "CLEAR": {
-      "General": 189
-    },
-    "Equinox": {
-      "General": 300
+      "General": [199, true, 12, 13, 199, "Cashback", "Nontransferable"]
     }
   },
   "Sign up Bonus": {
-    "Value": 1750,
+    "Cash Value": 0,
+    "Points Value": 1750,
     "Minimum Spend": 8000,
     "Minimum Spend Window Months": 6
   },

@@ -1,8 +1,6 @@
 {
   "short name": "Southwest Plus",
-  "Streaming": {
-    "General": 0.02
-  },
+  "Gas": 0.02,
   "Travel": {
     "Airlines": {
       "Southwest": {
@@ -12,39 +10,29 @@
           "Upgrades": 0.02
         }
       }
-    },
-    "Ride Share": {
-      "Lyft": 0.02,
-      "Uber": 0.02
-    },
-    "Transit": 0.02
-  },
-  "Utilities": {
-    "Phone": 0.02,
-    "Internet": 0.02,
-    "Cable": 0.02
+    }
   },
   "Baseline": 0.01,
-  "Annual Fee": 69,
+  "Annual Fee": 99,
   "Credits": {
-    "General": 0,
+    "General": [30, true, 12, 13, 30, "Southwest Rapid Rewards", "Airlines"],
     "Travel": {
       "Southwest": {
-        "General": 30,
         "Incidentals": {
-          "Upgrades": 30
+          "Bags": [70, true, 1, 2, 70, "Cashback", "Nontransferable"]
         }
       }
     }
   },
   "Sign up Bonus": {
-    "Value": 500,
-    "Minimum Spend": 1000,
+    "Cash Value": 0,
+    "Points Value": 1000,
+    "Minimum Spend": 4000,
     "Minimum Spend Window Months": 3
   },
   "Reward Program": "Southwest Rapid Rewards",
   "Program Type": "Airlines",
-  "Travel Card": false,
+  "Travel Card": true,
   "Issuer": "Chase",
   "FTF": 0.03
 }

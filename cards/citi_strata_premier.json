@@ -1,13 +1,7 @@
 {
-  "short name": "Premier",
-  "Groceries": {
-    "General": 0.03
-  },
+  "short name": "Strata Premier",
   "Dining": {
-    "Restaurant": 0.03,
-    "Doordash": 0.03,
-    "Grubhub": 0.03,
-    "UberEats": 0.03
+    "Restaurant": 0.03
   },
   "Travel": {
     "Airlines": {
@@ -18,6 +12,9 @@
           "Bags": 0.03,
           "Upgrades": 0.03
         }
+      },
+      "Portal": {
+        "General": 0.1
       }
     },
     "Hotels": {
@@ -30,15 +27,15 @@
   "Baseline": 0.01,
   "Annual Fee": 95,
   "Credits": {
-    "General": 0,
     "Travel": {
       "Hotels": {
-        "General": 100
+        "General": [100, true, 12, 13, 100, "Cashback", "Nontransferable"]
       }
     }
   },
   "Sign up Bonus": {
-    "Value": 600,
+    "Cash Value": 0,
+    "Points Value": 600,
     "Minimum Spend": 4000,
     "Minimum Spend Window Months": 3
   },

@@ -25,11 +25,9 @@
   "Rent": 0.01,
   "Baseline": 0.01,
   "Annual Fee": 0,
-  "Credits": {
-    "General": 0
-  },
   "Sign up Bonus": {
-    "Value": 0
+    "Cash Value": 0,
+    "Points Value": 0
   },
   "Reward Program": "Bilt",
   "Program Type": "Transferable",

@@ -17,38 +17,37 @@
   "Baseline": 0.01,
   "Annual Fee": 595,
   "Credits": {
-    "General": 0,
     "Travel": {
       "Airlines": {
         "American Airlines": {
-          "General": 0,
           "Incidentals": {
-            "Bags": 60
+            "Bags": [30, true, 1, 2, 30, "Cashback", "Nontransferable"]
           }
         }
       }
     },
     "Global Entry": {
-      "General": 100
+      "General": [120, true, 48, 49, 120, "Cashback", "Nontransferable"]
     },
     "Admirals Club": {
-      "General": 800
+      "General": [850, true, 12, 13, 850, "Cashback", "Nontransferable"]
     },
     "Grubhub": {
-      "General": 120
+      "General": [10, true, 1, 2, 10, "Cashback", "Nontransferable"]
     },
     "Lyft": {
-      "General": 120
+      "General": [10, true, 1, 2, 10, "Cashback", "Nontransferable"]
     }
   },
   "Sign up Bonus": {
-    "Value": 700,
+    "Cash Value": 0,
+    "Points Value": 700,
     "Minimum Spend": 7000,
     "Minimum Spend Window Months": 3
   },
   "Reward Program": "American AAdvantage",
   "Program Type": "Airlines",
-  "Travel Card": false,
+  "Travel Card": true,
   "Issuer": "Citi",
   "FTF": 0
 }

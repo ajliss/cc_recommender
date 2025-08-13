@@ -19,20 +19,21 @@
   "Baseline": 0.02,
   "Annual Fee": 395,
   "Credits": {
-    "General": 100,
+    "General": [100, true, 12, 13, 100, "Capital One Miles", "Transferable"],
     "Travel": {
       "Airlines": {
         "Portal": {
-          "General": 300
+          "General": [300, true, 12, 13, 300, "Cashback", "Nontransferable"]
         }
       }
     },
     "Global Entry": {
-      "General": 100
+      "General": [120, true, 12, 13, 120, "Cashback", "Nontransferable"]
     }
   },
   "Sign up Bonus": {
-    "Value": 750,
+    "Cash Value": 750,
+    "Points Value": 750,
     "Minimum Spend": 4000,
     "Minimum Spend Window Months": 3
   },

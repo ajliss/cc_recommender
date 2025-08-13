@@ -24,16 +24,16 @@
   "Baseline": 0.01,
   "Annual Fee": 325,
   "Credits": {
-    "General": 0,
     "Uber": {
-      "General":120
+      "General": [10, true, 1, 2, 10, "Cashback", "Nontransferable"]
     },
     "Dining": {
-      "Restaurant": 100
+      "Restaurant": [50, true, 6, 7, 50, "Cashback", "Nontransferable"]
     }
   },
   "Sign up Bonus": {
-    "Value": 900,
+    "Cash Value": 0,
+    "Points Value": 1000,
     "Minimum Spend": 4000,
     "Minimum Spend Window Months": 6
   },

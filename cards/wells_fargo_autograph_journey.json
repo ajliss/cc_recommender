@@ -1,30 +1,23 @@
 {
-  "short name": "Autograph",
+  "short name": "Autograph Journey",
   "Dining": {
     "Restaurant": 0.03
-  },
-  "Gas": 0.03,
-  "Streaming": {
-    "General": 0.03,
-    "Disney/Hulu Bundle": 0.03,
-    "Netflix": 0.03,
-    "Spotify": 0.03,
-    "Apple TV": 0.03
   },
   "Travel": {
     "Airlines": {
       "Generic": {
-        "General": 0.03,
-        "Tickets": 0.03,
+        "General": 0.04,
+        "Tickets": 0.04,
         "Incidentals": {
-          "Bags": 0.03,
-          "Upgrades": 0.03
+          "Bags": 0.04,
+          "Upgrades": 0.04
         }
       }
     },
     "Hotels": {
-      "General": 0.03
+      "General": 0.05
     },
+    "Car Rentals": 0.03,
     "Transit": 0.03
   },
   "Utilities": {
@@ -32,10 +25,19 @@
   },
   "Baseline": 0.01,
   "Annual Fee": 0,
+    "Credits": {
+    "Travel": {
+      "Airlines": {
+        "Generic": {
+          "General": [50, true, 12, 13, 50, "Cashback", "Nontransferable"]
+        }
+      }
+    }
+  },
   "Sign up Bonus": {
     "Cash Value": 0,
-    "Points Value": 200,
-    "Minimum Spend": 1000,
+    "Points Value": 600,
+    "Minimum Spend": 4000,
     "Minimum Spend Window Months": 3
   },
   "Reward Program": "Wells Fargo Points",

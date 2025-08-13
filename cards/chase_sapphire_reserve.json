@@ -1,13 +1,16 @@
 {
   "short name": "CSR",
+  "Dining": {
+    "Restaurant": 0.03
+  },
   "Travel": {
     "Airlines": {
       "Generic": {
-        "General": 0.03,
-        "Tickets": 0.03,
+        "General": 0.04,
+        "Tickets": 0.04,
         "Incidentals": {
-          "Bags": 0.03,
-          "Upgrades": 0.03
+          "Bags": 0.04,
+          "Upgrades": 0.04
         }
       },
       "Portal": {
@@ -25,8 +28,7 @@
       "Portal": 0.08
     },
     "Ride Share": {
-      "Lyft": 0.05,
-      "Uber": 0.03
+      "Lyft": 0.05
     }
   },
   "Hotels": 0.04,
@@ -34,21 +36,24 @@
   "Annual Fee": 795,
   "Credits": {
     "Dining": {
-      "Restaurant": 300
+      "Restaurant": [150, true, 6, 7, 150, "Cashback", "Nontransferable"]
     },
-    "General": 0,
     "Travel": {
-      "General": 300
+      "General": [300, true, 12, 13, 300, "Cashback", "Nontransferable"]
     },
     "Global Entry": {
-      "General": 100
+      "General": [120, true, 48, 49, 120, "Cashback", "Nontransferable"]
     },
-    "Lyft": 120,
-    "DashPash": 120,
-    "Priority Pass Select": 469
+    "Lyft": [10, true, 1, 2, 10, "Cashback", "Nontransferable"],
+    "DashPash": [120, true, 12, 13, 120, "Cashback", "Nontransferable"],
+    "Priority Pass Select": [469, true, 12, 13, 469, "Cashback", "Nontransferable"],
+    "Streaming": {
+      "Apple TV": [250, true, 12, 13, 250, "Cashback", "Nontransferable"]
+    }
   },
   "Sign up Bonus": {
-    "Value": 1000,
+    "Cash Value": 500,
+    "Points Value": 1000,
     "Minimum Spend": 5000,
     "Minimum Spend Window Months": 3
   },

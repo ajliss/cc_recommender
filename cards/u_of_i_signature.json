@@ -1,6 +1,12 @@
 {
-  "short name": "GreenState",
-  "Gas": 0.02,
+  "short name": "UoI Signature",
+  "Groceries": {
+    "General": 0.02
+  },
+  "Dining": {
+    "Restaurant": 0.02
+  },
+  "Gas": 0.05,
   "Airfare": 0.05,
   "Travel": {
     "Airlines": {
@@ -13,21 +19,22 @@
         }
       }
     },
+    "Airbnb": 0.05,
     "Hotels": {
       "General": 0.05
     }
   },
-  "Baseline": 0.01,
+  "Baseline": 0.015,
   "Annual Fee": 0,
   "Sign up Bonus": {
-    "Cash Value": 100,
+    "Cash Value": 150,
     "Points Value": 0,
-    "Minimum Spend": 1000,
-    "Minimum Spend Window Months": 2
+    "Minimum Spend": 3000,
+    "Minimum Spend Window Months": 12
   },
   "Reward Program": "Cashback",
   "Program Type": "Nontransferable",
   "Travel Card": true,
-  "Issuer": "GreenState Credit Union",
+  "Issuer": "University of Illinois Credit Union",
   "FTF": 0
 }

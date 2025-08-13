@@ -1,6 +1,8 @@
 {
   "short name": "BCP",
-  "Groceries": 0.06,
+  "Groceries": {
+    "General": 0.06
+  },
   "Streaming": {
     "General": 0.06
   },
@@ -15,17 +17,18 @@
   "Baseline": 0.01,
   "Annual Fee": 95,
   "Credits": {
-    "General": 0,
     "Streaming": {
-      "General": 0,
-      "Disney Bundle": 84
-    },
-    "Equinox": {
-      "General": 120
+      "Disney": [10, true, 1, 2, 10, "Cashback", "Nontransferable"]
+    }
+  },
+  "Spending Caps": {
+    "Groceries": {
+      "General": [6000, false, 12, 13, 6000]
     }
   },
   "Sign up Bonus": {
-    "Value": 250,
+    "Cash Value": 250,
+    "Points Value": 0,
     "Minimum Spend": 3000,
     "Minimum Spend Window Months": 6
   },
