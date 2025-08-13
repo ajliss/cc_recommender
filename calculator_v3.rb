@@ -14,6 +14,7 @@ class RewardsCalculatorV3
   end
 
   def run(combo_size)
+    time = Time.now
     # combinations
     combos = get_cc_combinations(combo_size)
     # calculate
@@ -23,7 +24,7 @@ class RewardsCalculatorV3
 
     spending_total = sum_spending
     # print result
-    print(rankings, spending_total)
+    print(rankings, spending_total, time)
   end
 
   def get_cc_combinations(size)
@@ -36,7 +37,7 @@ class RewardsCalculatorV3
       next if !@flags['AF'] && card['Annual Fee'].positive?
 
       card_rewards_hash = {}
-      building_spending_profile(card, card_rewards_hash, {}, @spending, [])
+      building_spending_profile(card, card_rewards_hash, card['Credits'], @spending, [])
       card['spending'] = card_rewards_hash
       cards << card
     end
@@ -45,12 +46,26 @@ class RewardsCalculatorV3
   end
 
   def filter_combinations(combinations)
+    combinations = filter_by_required_cards(combinations)
+    combinations = filter_by_travel_cards(combinations)
+    combinations
+  end
+
+  def filter_by_required_cards(combinations)
     return combinations unless @flags['Required cards']
 
     combinations.filter do |combo|
       required_card_names = @required_cards.each_pair.map { |a| a[0] if a[1] }.compact
       combo_names = combo.map { |c| c['short name'] }
       (required_card_names - combo_names).empty?
+    end
+  end
+
+  def filter_by_travel_cards(combinations)
+    return combinations unless @flags['Single Travel card']
+
+    combinations.filter do |combo|
+      combo.count { |card| card['Travel Card'] } < 2
     end
   end
 
@@ -63,9 +78,12 @@ class RewardsCalculatorV3
         card_rewards_hash[key] ||= {}
         building_spending_profile(card, card_rewards_hash[key], credits_hash[key], spending_hash[key], keys)
       else
+        spending = spending_hash[key] * 12
         multiplier = card.dig(*keys) || card['Baseline']
-        rewards = spending_hash[key] * multiplier * 12
-        credits = credits_hash[key] || 0
+        rewards = spending * multiplier
+        credits = credits_hash[key]&.first || 0
+        credits = spending if credits > spending
+
         card_rewards_hash[key] = [rewards, credits] unless spending_hash[key].zero?
       end
       keys.pop
@@ -149,7 +167,7 @@ class RewardsCalculatorV3
       name = card['short name']
       rewards_obj[name] = {}
       rewards_obj[name]['af'] = card['Annual Fee']
-      rewards_obj[name]['Credits'] = card['Credits']['General']
+      rewards_obj[name]['Credits'] = card.dig('Credits','General').nil? ? 0 : card['Credits']['General'].first
       rewards_obj[name]['SUB'] = find_sub_value(card)
       rewards_obj[name]['spending rewards'] = 0
 
@@ -157,7 +175,7 @@ class RewardsCalculatorV3
       rewards_obj['total']['af'] ||= 0
       rewards_obj['total']['af'] += card['Annual Fee']
       rewards_obj['total']['Credits'] ||= 0
-      rewards_obj['total']['Credits'] += card['Credits']['General']
+      rewards_obj['total']['Credits'] += card.dig('Credits','General').nil? ? 0 : card['Credits']['General'].first
       rewards_obj['total']['SUB'] ||= 0
       rewards_obj['total']['SUB'] += rewards_obj[name]['SUB'] unless @ineligible_subs[card['short name']]
       rewards_obj['total']['spending rewards'] = 0
@@ -167,18 +185,18 @@ class RewardsCalculatorV3
   def find_sub_value(card)
     return 0 if @ineligible_subs[card['short name']]
 
-    sub = card['Sign up Bonus']['Value']
+    sub =  card['Sign up Bonus']['Points Value']
     return sub if @flags['Cashback only']
 
     case card['Program Type']
     when 'Nontransferable'
-      sub * @reward_programs_points_values['Nontransferable'][card['Reward Program']]
+      sub * @reward_programs_points_values['Nontransferable'][card['Reward Program']] + card['Sign up Bonus']['Cash Value']
     when 'Transferable'
-      sub * @reward_programs_points_values['Transferable'][card['Reward Program']]['Generic Value']
+      sub * @reward_programs_points_values['Transferable'][card['Reward Program']]['Generic Value'] + card['Sign up Bonus']['Cash Value']
     when 'Airlines'
-      sub * @reward_programs_points_values['Airlines'][card['Reward Program']]
+      sub * @reward_programs_points_values['Airlines'][card['Reward Program']] + card['Sign up Bonus']['Cash Value']
     when 'Hotels'
-      sub * @reward_programs_points_values['Hotels'][card['Reward Program']]
+      sub * @reward_programs_points_values['Hotels'][card['Reward Program']] + card['Sign up Bonus']['Cash Value']
     end
   end
 
@@ -260,13 +278,14 @@ class RewardsCalculatorV3
     end
   end
 
-  def print(rankings, spending_total)
+  def print(rankings, spending_total, time)
     print_set('One Year Ranking:', rankings['one_year_ranking'], spending_total, 1)
     print_set("\nThree Year Ranking:", rankings['three_year_ranking'], spending_total, 3)
     print_set("\nFive Year Ranking:", rankings['five_year_ranking'], spending_total, 5)
     print_set("\nTen Year Ranking:", rankings['ten_year_ranking'], spending_total, 10)
     print_set("\nThree Year Ranking, No SUBs:", rankings['three_year_ranking_no_subs'], spending_total, 3)
     print_set("\nTen Year Ranking, No SUBs:", rankings['ten_year_ranking_no_subs'], spending_total, 10)
+    puts "Took #{Time.now - time} seconds"
   end
 
   def print_set(title, ranks, spending_total, years)
