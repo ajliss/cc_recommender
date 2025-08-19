@@ -34,7 +34,7 @@
   },
   "Reward Program": "Cashback",
   "Program Type": "Nontransferable",
-  "Travel Card": true,
+  "Travel Card": false,
   "Issuer": "University of Illinois Credit Union",
   "FTF": 0
 }

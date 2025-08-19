@@ -28,6 +28,10 @@
   },
   "Reward Program": "Cashback",
   "Program Type": "Nontransferable",
+  "Program Type Upgrade": {
+    "VX": ["Capital One Miles", "Transferable"],
+    "Venture": ["Capital One Miles", "Transferable"]
+  },
   "Travel Card": false,
   "Issuer": "Capital One",
   "FTF": 0

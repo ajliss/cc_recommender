@@ -1,0 +1,36 @@
+{
+  "short name": "UCCU Travel",
+  "Dining": {
+    "Restaurant": 0.02
+  },
+  "Gas": 0.03,
+  "Airfare": 0.04,
+  "Travel": {
+    "Airlines": {
+      "Generic": {
+        "General": 0.04,
+        "Tickets": 0.04,
+        "Incidentals": {
+          "Bags": 0.04,
+          "Upgrades": 0.04
+        }
+      }
+    },
+    "Hotels": {
+      "General": 0.04
+    }
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 50,
+  "Sign up Bonus": {
+    "Cash Value": 0,
+    "Points Value": 0,
+    "Minimum Spend": 0,
+    "Minimum Spend Window Months": 0
+  },
+  "Reward Program": "Cashback",
+  "Program Type": "Nontransferable",
+  "Travel Card": false,
+  "Issuer": "Utah Community Credit Union",
+  "FTF": 0
+}

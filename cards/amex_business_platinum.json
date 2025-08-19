@@ -1,0 +1,60 @@
+{
+  "short name": "Amex Business Plat",
+  "Travel": {
+    "Airlines": {
+      "Generic": {
+        "General": 0.05,
+        "Tickets": 0.05,
+        "Incidentals": {
+          "Bags": 0.05,
+          "Upgrades": 0.05
+        }
+      }
+    },
+    "Hotels": {
+      "Portal": 0.05
+    }
+  },
+  "Baseline": 0.01,
+  "Annual Fee": 695,
+  "Credits": {
+    "Travel": {
+      "Hotel": {
+        "Portal": [200, true, 12, 13, 200, "Cashback", "Nontransferable"]
+      },
+      "Hotels": {
+        "Hilton Honors": [50, true, 3, 4, 50, "Cashback", "Nontransferable"]
+      },
+      "Airlines": {
+        "Generic": {
+          "Airline Incidentals": {
+            "General": [200, true, 12, 13, 200, "Cashback", "Nontransferable"]
+          }
+        }
+      }
+    },
+    "Utilities": {
+      "Phone": [10, true, 1, 2, 10, "Cashback", "Nontransferable"]
+    },
+    "Adobe": {
+      "General": [250, true, 12, 13, 250, "Cashback", "Nontransferable"]
+    },
+    "Dell": {
+      "General": [150, true, 6, 7, 150, "Cashback", "Nontransferable"]
+    },
+    "CLEAR": {
+      "General": [209, true, 12, 13, 209, "Cashback", "Nontransferable"]
+    }
+  },
+  "Sign up Bonus": {
+    "Cash Value": 0,
+    "Points Value": 1500,
+    "Minimum Spend": 20000,
+    "Minimum Spend Window Months": 3
+  },
+  "Reward Program": "American Express Membership Rewards",
+  "Program Type": "Transferable",
+  "Travel Card": true,
+  "Issuer": "American Express",
+  "FTF": 0
+}
