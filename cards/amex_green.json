@@ -40,6 +40,9 @@
   },
   "Reward Program": "American Express Membership Rewards",
   "Program Type": "Transferable",
+  "Program Type Upgrade": {
+    "Amex Business Plat": ["American Express Business Membership Rewards", "Transferable"]
+  },
   "Travel Card": false,
   "Issuer": "American Express",
   "FTF": 0

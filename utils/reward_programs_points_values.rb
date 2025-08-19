@@ -33,6 +33,32 @@ module Utils
             },
             'Schwab' => 1.1
           },
+          'American Express Business Membership Rewards' => {
+            'Airline Partners' => {
+              'Aer Lingus AerClub' => 0,
+              'Aero Mexico Club Premier' => 0 * 1.6,
+              'Air Canada AeroPlan' => 1.3,
+              'Air France/KLM Flying Blue Miles' => 0,
+              'Avianca LifeMiles' => 1.3,
+              'British Airways Avios' => 1.09,
+              'Cathay Pacific Asia Miles' => 1.09,
+              'Delta Skymiles' => 1.3,
+              'Emirates Skywards Miles' => 0,
+              'Hawaiian Airlines HawaiianMiles' => 0.75,
+              'Iberia Avios' => 0,
+              'JetBlue TrueBlue' => 1.33 * 0.8,
+              'Qantas Frequent Flyer' => 0,
+              'Singapore Airlines KrisFlyer' => 0,
+              'Virgin Atlantic Flying Club' => 1.3
+            },
+            'Generic Value' => 1.55 * 100 / 65,
+            'Cashback' => 0.6 * 100 / 65,
+            'Hotel Partners' => {
+              'Choice Privileges' => 0.68,
+              'Hilton Honors' => 0.48 * 2,
+              'Marriott Rewards' => 0.8
+            }
+          },
           'Bilt' => {
             'Airline Partners' => {
               'Aer Lingus AerClub' => 0,

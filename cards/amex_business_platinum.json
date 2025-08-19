@@ -52,9 +52,9 @@
     "Minimum Spend": 20000,
     "Minimum Spend Window Months": 3
   },
-  "Reward Program": "American Express Membership Rewards",
+  "Reward Program": "American Express Business Membership Rewards",
   "Program Type": "Transferable",
-  "Travel Card": true,
+  "Travel Card": false,
   "Issuer": "American Express",
   "FTF": 0
 }

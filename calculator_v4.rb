@@ -17,23 +17,12 @@ class RewardsCalculatorV4
     time = Time.now
     # combinations
     combos = get_cc_combinations(combo_size)
-    # taken = Time.now - time
-    # binding.pry
-    # time = Time.now
     # calculate
     reward_hashes = calculate_rewards(combos)
-    # taken = Time.now - time
-    # binding.pry
-    # time = Time.now
     # rank
     rankings = calculate_rankings(reward_hashes)
-    # taken = Time.now - time
-    # binding.pry
-    # time = Time.now
+
     spending_total = sum_spending
-    # taken = Time.now - time
-    # binding.pry
-    # time = Time.now
     # print result
     print(rankings, spending_total, time)
   end
@@ -69,9 +58,8 @@ class RewardsCalculatorV4
   end
 
   def filter_combinations(combinations)
-    cc = combinations.filter do |combo|
+    combinations.filter do |combo|
       required_card_flag = true
-      # single_travel_card_flag = true
 
       required_card_flag = required_card?(combo) if @flags['Required cards']
       next unless required_card_flag
@@ -79,42 +67,11 @@ class RewardsCalculatorV4
       if @flags['Single Travel card']
         # HACK: reduce combinations of multiple airline/travel cards
         # that overlap too much
-        set_reward_programs(combo)
+        set_reward_programs(combo) unless @flags['Upgradeable points']
         combo.count { |card| card['Travel Card'] } < 2
       else
         false
       end
-      # false unless required_card_flag && single_travel_card_flag
-
-      # required_card_flag && single_travel_card_flag
-    end
-
-    # combinations = filter_by_required_cards(combinations)
-    # combinations = filter_by_travel_cards(combinations)
-    # combinations.each { |combo| set_reward_programs(combo)}
-    # combinations
-
-    # cc.each { |combo| set_reward_programs(combo)}
-    cc
-  end
-
-  def filter_by_required_cards(combinations)
-    return combinations unless @flags['Required cards']
-
-    combinations.filter do |combo|
-      required_card_names = @required_cards.each_pair.map { |a| a[0] if a[1] }.compact
-      combo_names = combo.map { |c| c['short name'] }
-      (required_card_names - combo_names).empty?
-    end
-  end
-
-  def filter_by_travel_cards(combinations)
-    # HACK: reduce combinations of multiple airline/travel cards
-    # that overlap too much
-    return combinations unless @flags['Single Travel card']
-
-    combinations.filter do |combo|
-      combo.count { |card| card['Travel Card'] } < 2
     end
   end
 

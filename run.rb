@@ -12,11 +12,12 @@ class Run
       'AF' => true,
       'Cashback only' => false,
       'Credits' => true,
-      'Sign up Bonus' => true,
+      # 'Sign up Bonus' => true,
       'SUB from normal spend' => false,
       'Required cards' => false,
       'Ineligible cards' => true,
-      'Single Travel card' => true
+      'Single Travel card' => true,
+      'Upgradeable points' => true,
     }
   end
 
@@ -26,6 +27,7 @@ class Run
       'Altitude Reserve' => false,
       'Autograph' => false,
       'Bilt' => false,
+      'Amex Business Plat' => false,
       'VX' => false,
       'SO' => false
     }
