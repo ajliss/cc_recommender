@@ -14,8 +14,8 @@ class RewardsCalculatorV4
   end
 
   def run(combo_size)
-    # combinations
     time = Time.now
+    # combinations
     combos = get_cc_combinations(combo_size)
     # taken = Time.now - time
     # binding.pry
@@ -44,21 +44,58 @@ class RewardsCalculatorV4
     Dir.each_child('Cards') do |x|
       card = JSON.parse(File.read(File.open(File.join(File.expand_path('./cards'), x))))
       # needed for calculating rewards
-      card['rewards'] = { 'total' => [0, 0] }
 
       next if @flags['Ineligible cards'] && @ineligible_cards[card['short name']]
       next if !@flags['AF'] && card['Annual Fee'].positive?
 
+      card['rewards'] = { 'total' => [0, 0] }
+      if card['Program Type'] == 'Upgradeable' && @flags['cashback only']
+        card['Program Type'] == card['Default Program Type']
+      end
+
       cards << card
     end
-    cards.combination(size) { |pair| combinations << pair }
+    cards.combination(size) { |combo| combinations << combo.map { |c| deep_clone(c) } }
     filter_combinations(combinations)
   end
 
+  def deep_clone(obj)
+    obj.clone.tap do |new_obj|
+      new_obj.each do |key, val|
+        new_obj[key] = deep_clone(val) if val.is_a?(Hash)
+        new_obj[key] = val.dup if val.is_a?(Array)
+      end
+    end
+  end
+
   def filter_combinations(combinations)
-    combinations = filter_by_required_cards(combinations)
-    combinations = filter_by_travel_cards(combinations)
-    combinations
+    cc = combinations.filter do |combo|
+      required_card_flag = true
+      # single_travel_card_flag = true
+
+      required_card_flag = required_card?(combo) if @flags['Required cards']
+      next unless required_card_flag
+
+      if @flags['Single Travel card']
+        # HACK: reduce combinations of multiple airline/travel cards
+        # that overlap too much
+        set_reward_programs(combo)
+        combo.count { |card| card['Travel Card'] } < 2
+      else
+        false
+      end
+      # false unless required_card_flag && single_travel_card_flag
+
+      # required_card_flag && single_travel_card_flag
+    end
+
+    # combinations = filter_by_required_cards(combinations)
+    # combinations = filter_by_travel_cards(combinations)
+    # combinations.each { |combo| set_reward_programs(combo)}
+    # combinations
+
+    # cc.each { |combo| set_reward_programs(combo)}
+    cc
   end
 
   def filter_by_required_cards(combinations)
@@ -81,69 +118,120 @@ class RewardsCalculatorV4
     end
   end
 
+  def required_card?(combo)
+    required_card_names = @required_cards.each_pair.map do |arr|
+      arr[0] if arr[1]
+    end.compact
+    combo_names = combo.map { |c| c['short name'] }
+    (required_card_names - combo_names).empty?
+  end
+
+  def set_reward_programs(combo)
+    names = combo.map { |card| card['short name'] }
+    combo.each do |card|
+      next unless card['Program Type Upgrade']
+
+      if @flags['Cashback only']
+        card['Program Type'] = card['Default Program Type']
+        next
+      end
+
+      card['Program Type Upgrade'].each_pair do |key, val|
+        next unless names.include?(key)
+
+        card['Reward Program'] = val[0]
+        card['Program Type'] = val[1]
+      end
+    end
+  end
+
   def calculate_rewards(combos)
     combos.map do |combo|
       # go through spending and assign it to each card by credit, cap and rate
       # and calculate all the rewards from that
-      # binding.pry
-      # time = Time.now
-      assign_spending(combo, [], @spending)
-      # taken = Time.now - time
-      # binding.pry
-      # time = Time.now
+      traverse_spending(combo, [], @spending)
+
       reward_hash = build_rewards_hashes(combo)
-      # taken = Time.now - time
-      # binding.pry
-      clear_rewards_from_cards(combo)
+
       reward_hash
     end
   end
 
-  def clear_rewards_from_cards(combo)
-    combo.each do |card|
-      card['rewards'] = { 'total' => [0, 0] }
-    end
-  end
-
-  def assign_spending(combo, keys, spending_hash)
+  def traverse_spending(combo, keys, spending_hash)
     spending_hash.each_pair do |key, value|
       keys << key
       if value.instance_of?(::Hash)
         # dig deeper
-        assign_spending(combo, keys, value)
+        traverse_spending(combo, keys, value)
       else
-        # assign spending to card month by month
-        caps_flag = any_caps?(combo, keys)
-        credits_flag = any_credits?(combo, keys)
-        if caps_flag || credits_flag
-          # check if monthly credits or caps
-          (1..12).each do |month|
-            refresh_credits_and_caps(combo, keys, month)
-            # spend for credits since they have best rate
-            remaining = if credits_flag
-                          use_credits(combo, keys, value, caps_flag)
-                        else
-                          value
-                        end
-
-            # spend by best category, taking spending caps into account
-            assign_spending_by_category_rate(combo, keys, remaining, caps_flag) if remaining.positive?
-            # assign spending by baseline
-          end
-        else
-          assign_spending_by_category_rate(combo, keys, value * 12, caps_flag)
-        end
+        assign_spending_to_card(combo, keys, value) unless value.zero?
       end
       keys.pop
     end
   end
 
+  def assign_spending_to_card(combo, keys, value)
+    # check if monthly credits or caps
+    caps_flag, cap_refresh_necessary = any_caps?(combo, keys)
+    credits_flag, credit_refresh_necessary = any_credits?(combo, keys)
+
+    if cap_refresh_necessary || credit_refresh_necessary
+      # assign spending to card month by month
+      (1..12).each do |month|
+        refresh_credits_and_caps(combo, keys, month)
+        # spend for credits since they have best return rate
+        remaining = if credits_flag
+                      use_credits(combo, keys, value, caps_flag)
+                    else
+                      value
+                    end
+
+        # spend by best category, taking spending caps into account
+        assign_spending_by_category_rate(combo, keys, remaining, caps_flag) if remaining.positive?
+        # assign spending by baseline
+      end
+    elsif credits_flag || caps_flag
+      remaining = if credits_flag
+                    use_credits(combo, keys, value * 12, caps_flag)
+                  else
+                    value * 12
+                  end
+      assign_spending_by_category_rate(combo, keys, remaining, caps_flag) if remaining.positive?
+    else
+      assign_to_best_category(combo, keys, value * 12)
+    end
+  end
+
   def any_caps?(combo, keys)
-    combo.any? { |card| card.dig('Spending Caps', *keys) }
+    cap_flag = false
+    combo.each do |card|
+      cap = card.dig('Spending Caps', *keys)
+      next unless cap
+
+      cap_flag = true
+      if cap [1] || cap[3] > 12
+        # spending cap that refreshes before a year
+        return [cap_flag, true]
+      end
+    end
+    # possible spending cap, but never refreshed if so
+    [cap_flag, false]
   end
 
   def any_credits?(combo, keys)
-    combo.any? { |card| card.dig('Credits', *keys) }
+    credits_flag = false
+    combo.each do |card|
+      credits = card.dig('Credits', *keys)
+      next unless credits
+
+      credits_flag = true
+      if credits [1] || credits[3] > 12
+        # credits that refresh before a year
+        return [credits_flag, true]
+      end
+    end
+    # possible credits, but never refreshed if so
+    [credits_flag, false]
   end
 
   def refresh_credits_and_caps(combo, keys, month)
@@ -170,11 +258,11 @@ class RewardsCalculatorV4
   def use_credits(combo, keys, spending, caps_flag)
     # sort by size of credit then assign spending to credits
     sort_by_credits(combo, keys).each do |card|
-      next if card.dig('Credits', *keys).nil?
+      credit_info = card.dig('Credits', *keys)
+      next if credit_info.nil?
 
       # example: [amount, refresh?, months until refresh, next month refresh, full amount, program info]
       # => [10, true, 1, 1, 10, "Cashback", "Nontransferable"]
-      credit_info = card.dig('Credits', *keys)
       cap_info = card.dig('Spending Caps', *keys) if caps_flag
       next if credit_info[0].zero?
 
