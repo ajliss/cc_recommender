@@ -41,6 +41,7 @@ class Run
       'CSR' => false,
       'SO' => false,
       'Amex Plat' => false,
+      'Amex Business Plat' => false,
       'Amex Gold' => false
     }
   end
