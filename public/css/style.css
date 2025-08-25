@@ -1,0 +1,11 @@
+input {
+  width: 60px;
+  text-align: right;
+  position: absolute;
+  left: 14%;
+}
+
+input.button {
+  text-align: center;
+  width: fit-content;
+}
