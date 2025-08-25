@@ -1,0 +1,19 @@
+<div class="container">
+  <hr>
+  <hr>
+  <table>
+    <thead>
+      <tr>
+        <th><%= name.gsub('_', ' ').capitalize %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% 10.times.each do |idx| %>
+        <% break if ranking[idx].nil? %>
+        <tr>
+          <td><%= "#{ranking[idx][0...-1].join(' - ')}, Rate: #{(ranking[idx].first / (spending_total * ranking[idx].last) * 100).round(2)}%" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

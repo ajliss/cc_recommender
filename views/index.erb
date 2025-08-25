@@ -1,0 +1,21 @@
+<section class="hero is-link is-medium">
+  <div class="hero-body">
+    <p class="title">
+      Calculate Credit Card Rewards
+    </p>
+
+  <form method="get" action="/calculate_rewards">
+    <label >Number of cards: </label>
+    <input type="text" id="no_of_cards" name="no_of_cards" value="1"><br>
+    <br>
+    <input class="button" type="submit" value="Calculate">
+  </form>
+  </div>
+
+  <% if results%>
+  <h1 class="title">Results</h1>
+    <% results.first.each_pair do |name, ranking|%>
+       <%= erb :results, locals: { name:, ranking:, spending_total: results.last} %>
+    <% end%>
+  <% end %>
+</section>
