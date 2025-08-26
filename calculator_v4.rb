@@ -422,6 +422,7 @@ class RewardsCalculatorV4
     points_value = 0
     combo.each do |card|
       next if @ineligible_subs[card['short name']]
+
       base_value = card['Sign up Bonus']['Points Value']
       points_value += determine_value(base_value, card['Program Type'], card['Reward Program'])
     end

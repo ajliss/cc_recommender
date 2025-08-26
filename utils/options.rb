@@ -22,7 +22,7 @@ module Utils
         'Capital One Venture X' => {},
         'Chase Freedom Unlimited' => {},
         'Chase Sapphire Preferred' => {},
-        'Chase Sapphire Resrve' => {},
+        'Chase Sapphire Reserve' => {},
         'Chase Southwest Plus' => {},
         'Chase Southwest Premier' => {},
         'Chase Southwest Priority' => {},
