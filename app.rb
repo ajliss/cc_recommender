@@ -55,6 +55,15 @@ get '/card_options' do
   erb :card_options, locals: { card_options: session_card_options }
 end
 
+get '/reset_settings' do
+  session['spending'] = default_spending
+  session['points_values'] = default_points_values
+  session['card_options'] = default_card_options
+  session['flags'] = default_flags.to_s
+
+  redirect back
+end
+
 get '/points_values' do
   # spending
   use_or_set_points_values

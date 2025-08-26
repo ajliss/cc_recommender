@@ -15,12 +15,12 @@
       <% 10.times.each do |idx| %>
         <% break if ranking[idx].nil? %>
         <tr class="results">
-        <td class="results"><%= "#{ranking[idx].first}" %></td>
-        <td class="results"><%= "#{ranking[idx][1]}" %></td>
-        <td class="results"><%= "Rate: #{(ranking[idx].first / (spending_total * ranking[idx].last) * 100).round(2)}%" %></td>
-        <% ranking[idx][2...-1].each do |arr| %>
-          <td class="results"><%= "#{arr.first}: #{arr.last}" %></td>
-        <% end %>
+          <td class="results"><%= "$#{ranking[idx].first}" %></td>
+          <td class="results"><%= "#{ranking[idx][1]}" %></td>
+          <td class="results"><%= "Rate: #{(ranking[idx].first / (spending_total * ranking[idx].last) * 100).round(2)}%" %></td>
+          <% ranking[idx][2...-1].each do |arr| %>
+            <td class="results"><%= "#{arr.first}: $#{arr.last}" %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

@@ -5,7 +5,7 @@ module Utils
     def self.monthly
       {
         'Dining' => {
-          'Restaurant' => 80,
+          'Restaurant' => 0,
           'Doordash' => 0,
           'Grubhub' => 0,
           'UberEats' => 0
@@ -13,16 +13,16 @@ module Utils
         'Drugstores' => 0,
         'Gas' => 0,
         'Groceries' => {
-          'General' => 600,
-          'Apple Pay' => 600
+          'General' => 0,
+          'Apple Pay' => 0
         },
         'Entertainment' => 20,
         'Miscellaneous' => {
           'Apple Pay' => 0,
-          'General' => 195
+          'General' => 0
         },
         'Online Shopping' => {
-          'Amazon.com' => 100,
+          'Amazon.com' => 0,
           'Walmart.com' => 0,
           'Online Retail' => 0,
           'Groceries.com' => 0,
@@ -38,7 +38,7 @@ module Utils
           'Airlines' => {
             # TODO: Add individual airlines
             'Generic' => {
-              'General' => 100,
+              'General' => 0,
               'Tickets' => 0,
               'Incidentals' => {
                 'Bags' => 0,
@@ -47,7 +47,7 @@ module Utils
               }
             },
             'Portal' => {
-              'General' => 18,
+              'General' => 0,
               'Tickets' => 0,
               'Incidentals' => {
                 'Bags' => 0,
@@ -84,8 +84,8 @@ module Utils
               }
             }
           },
-          'Airbnb' => 50,
-          'Car Rentals' => 20,
+          'Airbnb' => 0,
+          'Car Rentals' => 0,
           'Hotels' => {
             'General' => 0,
             'Portal' => 0,
@@ -102,14 +102,14 @@ module Utils
             'Lyft' => 0,
             'Uber' => 0
           },
-          'Transit' => 10
+          'Transit' => 0
         },
         'Utilities' => {
-          'Phone' => 25,
-          'Internet' => 50,
+          'Phone' => 0,
+          'Internet' => 0,
           'Cable' => 0,
-          'General' => 60,
-          'Apple Pay' => 40
+          'General' => 0,
+          'Apple Pay' => 0
         }
       }
     end
