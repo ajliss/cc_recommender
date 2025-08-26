@@ -9,3 +9,4 @@ gem 'rake'
 gem 'sinatra'
 gem 'sinatra-activerecord' # ORM gem
 gem 'sinatra-contrib'
+gem 'thin'
