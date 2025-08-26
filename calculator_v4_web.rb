@@ -36,7 +36,7 @@ class RewardsCalculatorV4Web
   def get_cc_combinations(size)
     cards = []
     combinations = []
-    Dir.each_child('Cards') do |x|
+    Dir.each_child('cards') do |x|
       card = JSON.parse(File.read(File.open(File.join(File.expand_path('./cards'), x))))
 
       next if @excluded_cards[card['full name']]
