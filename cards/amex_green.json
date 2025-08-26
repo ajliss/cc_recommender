@@ -1,5 +1,6 @@
 {
   "short name": "Amex Green",
+  "full name": "American Express Green",
   "Dining": {
     "Restaurant": 0.03,
     "Doordash": 0.03,
