@@ -1,11 +1,61 @@
-input {
+input.spending {
   width: 60px;
   text-align: right;
   position: absolute;
-  left: 14%;
+  left: 200px;
+}
+
+input#no_of_cards {
+  width: 20px;
+  padding: 3px;
+  text-align: center;
+}
+
+input.points {
+  width: 60px;
+  text-align: right;
+  position: absolute;
+  left: 365px;
+}
+
+input.card_options {
+  width: 90%;
 }
 
 input.button {
   text-align: center;
   width: fit-content;
+}
+
+th {
+  text-align: center;
+  font-weight: normal;
+  text-decoration-line: underline;
+}
+
+tr.card_options:nth-child(odd) {
+  background-color: #d6eee7;
+}
+
+tbody > tr.results:nth-child(odd) {
+  background-color: #d6eee7;
+}
+
+caption {
+  font-weight: bold;
+}
+
+th, td {
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+table.results, th.results, td.results {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+div.points {
+  text-decoration: underline;
 }
