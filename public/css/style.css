@@ -33,6 +33,11 @@ th {
   text-decoration-line: underline;
 }
 
+h4 {
+  font-weight: normal;
+  text-decoration-line: underline;
+}
+
 tr.card_options:nth-child(odd) {
   background-color: #d6eee7;
 }

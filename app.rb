@@ -29,6 +29,10 @@ get '/' do
   }
 end
 
+get '/about' do
+  erb :about
+end
+
 get '/calculate_rewards' do
   use_or_set_spending
   use_or_set_points_values
