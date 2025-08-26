@@ -5,29 +5,34 @@ module Utils
     def self.monthly
       {
         'Dining' => {
-          'Restaurant' => 180,
+          'Restaurant' => 80,
           'Doordash' => 0,
           'Grubhub' => 0,
           'UberEats' => 0
         },
         'Drugstores' => 0,
         'Gas' => 0,
-        'Groceries' => 100,
+        'Groceries' => {
+          'General' => 600,
+          'Apple Pay' => 600
+        },
+        'Entertainment' => 20,
         'Miscellaneous' => {
-          'Apple Pay' => 1000,
-          'General' => 200
+          'Apple Pay' => 0,
+          'General' => 195
         },
         'Online Shopping' => {
-          'Amazon.com' => 0,
+          'Amazon.com' => 100,
           'Walmart.com' => 0,
           'Online Retail' => 0,
           'Groceries.com' => 0,
           'Target' => 0
         },
         'Streaming' => {
-          'Disney/Hulu Bundle' => 0,
-          'Netflix' => 26,
-          'Spotify' => 0
+          'Disney' => 0,
+          'Netflix' => 0,
+          'Spotify' => 0,
+          'Apple TV' => 0
         },
         'Travel' => {
           'Airlines' => {
@@ -42,7 +47,7 @@ module Utils
               }
             },
             'Portal' => {
-              'General' => 0,
+              'General' => 18,
               'Tickets' => 0,
               'Incidentals' => {
                 'Bags' => 0,
@@ -79,8 +84,8 @@ module Utils
               }
             }
           },
-          'Airbnb' => 100,
-          'Car Rentals' => 0,
+          'Airbnb' => 50,
+          'Car Rentals' => 20,
           'Hotels' => {
             'General' => 0,
             'Portal' => 0,
@@ -97,13 +102,14 @@ module Utils
             'Lyft' => 0,
             'Uber' => 0
           },
-          'Transit' => 0
+          'Transit' => 10
         },
         'Utilities' => {
-          'Phone' => 0,
-          'Internet' => 0,
+          'Phone' => 25,
+          'Internet' => 50,
           'Cable' => 0,
-          'General' => 135
+          'General' => 60,
+          'Apple Pay' => 40
         }
       }
     end

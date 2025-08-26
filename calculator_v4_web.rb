@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'pry'
 require 'json'
 
 class RewardsCalculatorV4Web
@@ -8,7 +7,7 @@ class RewardsCalculatorV4Web
     @flags = opts.fetch(:flags, {})
     @spending = opts.fetch(:spending, {})
     @reward_programs_points_values = opts.fetch(:reward_programs_points_values, {})
-    @ineligible_cards = opts.fetch(:ineligible_cards, {})
+    @excluded_cards = opts.fetch(:excluded_cards, {})
     @ineligible_subs = opts.fetch(:ineligible_subs, {})
     @required_cards = opts.fetch(:required_cards, {})
   end
@@ -23,8 +22,7 @@ class RewardsCalculatorV4Web
     rankings = calculate_rankings(reward_hashes)
 
     spending_total = sum_spending
-    # print result
-    # print(rankings, spending_total, time)
+
     final_rankings = finalize_rankings(rankings)
     [final_rankings, spending_total]
   end
@@ -40,9 +38,8 @@ class RewardsCalculatorV4Web
     combinations = []
     Dir.each_child('Cards') do |x|
       card = JSON.parse(File.read(File.open(File.join(File.expand_path('./cards'), x))))
-      # needed for calculating rewards
 
-      next if @flags['Ineligible cards'] && @ineligible_cards[card['short name']]
+      next if @excluded_cards[card['full name']]
       next if !@flags['AF'] && card['Annual Fee'].positive?
 
       card['rewards'] = { 'total' => [0, 0] }
@@ -69,7 +66,7 @@ class RewardsCalculatorV4Web
     combinations.filter do |combo|
       required_card_flag = true
 
-      required_card_flag = required_card?(combo) if @flags['Required cards']
+      required_card_flag = required_card?(combo) unless @required_cards.empty?
       next unless required_card_flag
 
       if @flags['Single Travel card']
@@ -87,19 +84,16 @@ class RewardsCalculatorV4Web
     required_card_names = @required_cards.each_pair.map do |arr|
       arr[0] if arr[1]
     end.compact
-    combo_names = combo.map { |c| c['short name'] }
+    combo_names = combo.map { |c| c['full name'] }
     (required_card_names - combo_names).empty?
   end
 
   def set_reward_programs(combo)
-    names = combo.map { |card| card['short name'] }
+    return if @flags['Cashback only']
+
+    names = combo.map { |card| card['full name'] }
     combo.each do |card|
       next unless card['Program Type Upgrade']
-
-      if @flags['Cashback only']
-        card['Program Type'] = card['Default Program Type']
-        next
-      end
 
       card['Program Type Upgrade'].each_pair do |key, val|
         next unless names.include?(key)
@@ -129,7 +123,8 @@ class RewardsCalculatorV4Web
         # dig deeper
         traverse_spending(combo, keys, value)
       else
-        assign_spending_to_card(combo, keys, value) unless value.zero?
+        number = value.to_i
+        assign_spending_to_card(combo, keys, number) unless number.zero?
       end
       keys.pop
     end
@@ -372,17 +367,15 @@ class RewardsCalculatorV4Web
   end
 
   def build_rewards_hashes(combo)
-    # combos.map do |combo|
     combo = sort_by_rewards(combo)
     {
       annual_fee: sum_af(combo),
-      combo_name: combo.map { |card| card['short name'] }.join('/'),
+      combo_name: combo.map { |card| card['full name'] }.join(' | '),
       rewards: sum_rewards(combo),
       sub_value: sum_sub_values(combo),
       rewards_by_card: value_by_card(combo)
       # non spending value here?
     }
-    # end
   end
 
   def sort_by_rewards(combo)
@@ -411,10 +404,10 @@ class RewardsCalculatorV4Web
 
   def value_by_card(combo)
     combo.each_with_object({}) do |card, obj|
-      obj[card['short name']] = {}
-      obj[card['short name']][:rewards] = card['rewards']['total']
-      obj[card['short name']][:annual_fee] = card['Annual Fee']
-      obj[card['short name']][:sub_value] = sum_sub_values([card])
+      obj[card['full name']] = {}
+      obj[card['full name']][:rewards] = card['rewards']['total']
+      obj[card['full name']][:annual_fee] = card['Annual Fee']
+      obj[card['full name']][:sub_value] = sum_sub_values([card])
     end
   end
 
@@ -429,7 +422,8 @@ class RewardsCalculatorV4Web
   def sum_sub_points_value(combo)
     points_value = 0
     combo.each do |card|
-      next if @ineligible_subs[card['short name']]
+      next if @ineligible_subs[card['full name']]
+
       base_value = card['Sign up Bonus']['Points Value']
       points_value += determine_value(base_value, card['Program Type'], card['Reward Program'])
     end
@@ -473,13 +467,13 @@ class RewardsCalculatorV4Web
     }
 
     reward_hashes.each do |rewards_obj|
-      rankings['one_year_ranking'] << build_rewards_report_line(1, true, rewards_obj).flatten
-      rankings['three_year_ranking'] << build_rewards_report_line(3, true, rewards_obj).flatten
-      rankings['five_year_ranking'] << build_rewards_report_line(5, true, rewards_obj).flatten
-      rankings['ten_year_ranking'] << build_rewards_report_line(10, true, rewards_obj).flatten
-      rankings['one_year_ranking_no_subs'] << build_rewards_report_line(1, false, rewards_obj).flatten
-      rankings['three_year_ranking_no_subs'] << build_rewards_report_line(3, false, rewards_obj).flatten
-      rankings['ten_year_ranking_no_subs'] << build_rewards_report_line(10, false, rewards_obj).flatten
+      rankings['one_year_ranking'] << build_rewards_report_line(1, true, rewards_obj)
+      rankings['three_year_ranking'] << build_rewards_report_line(3, true, rewards_obj)
+      rankings['five_year_ranking'] << build_rewards_report_line(5, true, rewards_obj)
+      rankings['ten_year_ranking'] << build_rewards_report_line(10, true, rewards_obj)
+      rankings['one_year_ranking_no_subs'] << build_rewards_report_line(1, false, rewards_obj)
+      rankings['three_year_ranking_no_subs'] << build_rewards_report_line(3, false, rewards_obj)
+      rankings['ten_year_ranking_no_subs'] << build_rewards_report_line(10, false, rewards_obj)
     end
 
     rankings.each_value do |val|
@@ -500,10 +494,10 @@ class RewardsCalculatorV4Web
       total_rewards = obj[:rewards].last * years
       total_rewards -= obj[:annual_fee] * years
       total_rewards += obj[:sub_value] if sub_flag
-      contributions << [key, total_rewards.round(2), years]
+      contributions << [key, total_rewards.round(2)]
     end
     contributions.sort! { |a, b| b.last <=> a.last }
-    line + contributions.flatten
+    line + contributions << years
   end
 
   def sum_spending
@@ -512,7 +506,7 @@ class RewardsCalculatorV4Web
       if val.instance_of?(::Hash)
         find_ints(val, arr)
       else
-        arr << val
+        arr << val.to_i
       end
     end
     arr.sum * 12
@@ -523,28 +517,8 @@ class RewardsCalculatorV4Web
       if val.instance_of?(::Hash)
         find_ints(val, arr)
       else
-        arr << val
+        arr << val.to_i
       end
-    end
-  end
-
-  def print(rankings, spending_total, time)
-    print_set('One Year Ranking:', rankings['one_year_ranking'], spending_total, 1)
-    print_set("\nThree Year Ranking:", rankings['three_year_ranking'], spending_total, 3)
-    print_set("\nFive Year Ranking:", rankings['five_year_ranking'], spending_total, 5)
-    print_set("\nTen Year Ranking:", rankings['ten_year_ranking'], spending_total, 10)
-    print_set("\nOne Year Ranking, No SUBs:", rankings['one_year_ranking_no_subs'], spending_total, 1)
-    print_set("\nThree Year Ranking, No SUBs:", rankings['three_year_ranking_no_subs'], spending_total, 3)
-    print_set("\nTen Year Ranking, No SUBs:", rankings['ten_year_ranking_no_subs'], spending_total, 10)
-    puts "Took #{Time.now - time} seconds"
-  end
-
-  def print_set(title, ranks, spending_total, years)
-    puts title
-    10.times.each do |idx|
-      break if ranks[idx].nil?
-
-      puts "#{ranks[idx].join(' - ')}, Rate: #{(ranks[idx].first / (spending_total * years) * 100).round(2)}%"
     end
   end
 end
