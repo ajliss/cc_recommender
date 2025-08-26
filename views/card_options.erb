@@ -1,0 +1,39 @@
+<div class="container">
+  <h1 class="title">Card Options</h1>
+  <hr>
+  <hr>
+  <table>
+    <tr>
+      <th>Card</th>
+      <th>Required?</th>
+      <th>Excluded?</th>
+      <th>No Sign Up Bonus?</th>
+    </tr>
+  <form class="points" method="post" action="/save_card_options">
+    <% card_options.each_pair do |k, v| %>
+      <tr class="card_options">
+        <td>
+          <label style="margin-left:5px;"><%=k%>: </label>
+        </td>
+        <td>
+          <input class="card_options" type="checkbox" id="<%=k%>_required" name="<%=k%>_required" <%='checked' if v['required'] %> > 
+        </td>
+        <td>
+          <input class="card_options" type="checkbox" id="<%=k%>_excluded" name="<%=k%>_excluded" <%='checked' if v['excluded'] %> >
+        </td>
+        <td>
+          <input class="card_options" type="checkbox" id="<%=k%>_no-sub" name="<%=k%>_no-sub" <%='checked' if v['no-sub'] %> >
+        </td>
+      </tr>
+    <% end %>
+    <tr>
+    <td>
+    <input class="button" type="submit" value="save">
+    </td>
+    </tr>
+  </form>
+  </table>
+  <br>
+  <br>
+  <br>
+</div>

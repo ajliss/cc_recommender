@@ -3,17 +3,40 @@
     <p class="title">
       Calculate Credit Card Rewards
     </p>
-
-  <form method="get" action="/calculate_rewards">
-    <label >Number of cards: </label>
-    <input type="text" id="no_of_cards" name="no_of_cards" value="1"><br>
-    <br>
-    <input class="button" type="submit" value="Calculate">
-  </form>
+  <table>
+    <form method="get" action="/calculate_rewards">
+    <tr>
+      <td>
+        <label >Number of cards: </label>
+      </td>
+      <td>
+        <input type="text" id="no_of_cards" name="no_of_cards" value="<%= last_run_cards_no || 1 %>"><br>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label >Cashback only: </label>
+      </td>
+      <td>
+        <input class="flags" type="checkbox" id="cashback_only" name="cashback_only" <%='checked' if cashback_only %> ><br>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label >Upgradeable points: </label>
+      </td>
+      <td>
+        <input class="flags" type="checkbox" id="upgradeable_points" name="upgradeable_points" <%='checked' if upgradeable_points %> ><br>
+      </td>
+    </tr>
+      <br>
+      <input class="button" type="submit" value="Calculate">
+    </form>
+  </table>
   </div>
 
   <% if results%>
-  <h1 class="title">Results</h1>
+  <h3 class="title">Results</h3>
     <% results.first.each_pair do |name, ranking|%>
        <%= erb :results, locals: { name:, ranking:, spending_total: results.last} %>
     <% end%>

@@ -1,0 +1,16 @@
+<% hash.each_pair do |k, v| %>
+  <% keys.append(k) %>
+  <% if v.instance_of?(::Hash) %>
+    <% unless k.match?(/partners/i) %>
+    <div class="points" style="margin-left:<%=depth * 20%>px;"><%=k%>:</div>
+    <% depth += 1 %>
+      <%= erb :points_category, locals: {hash: v, depth:, keys:}, layout: false %>
+    <% depth -= 1 %>
+    <% end %>
+    <% keys.pop %>
+  <% else %>
+    <label style="margin-left:<%=depth * 20%>px;" for="<%=keys.join('_')%>"><%=k%>: </label>
+    <input class="points" type="text" id="<%=keys.join('_')%>" name="<%=keys.join('_')%>" value="<%=v.to_f.round(2)%>"><br>
+    <% keys.pop %>
+  <% end %>
+<% end %>

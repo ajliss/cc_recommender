@@ -1,19 +1,29 @@
 <div class="container">
   <hr>
   <hr>
-  <table>
+  <table class="results">
+      <caption><%= name.split('_').map(&:capitalize).join(' ') %></caption>
     <thead>
-      <tr>
-        <th><%= name.gsub('_', ' ').capitalize %></th>
+      <tr class="results">
+        <th class="results">Rewards Value</th>
+        <th class="results">Cards</th>
+        <th class="results">Rate of Return</th>
+        <th class="results" colspan="5">Rewards by Card</th>
       </tr>
     </thead>
     <tbody>
       <% 10.times.each do |idx| %>
         <% break if ranking[idx].nil? %>
-        <tr>
-          <td><%= "#{ranking[idx][0...-1].join(' - ')}, Rate: #{(ranking[idx].first / (spending_total * ranking[idx].last) * 100).round(2)}%" %></td>
+        <tr class="results">
+        <td class="results"><%= "#{ranking[idx].first}" %></td>
+        <td class="results"><%= "#{ranking[idx][1]}" %></td>
+        <td class="results"><%= "Rate: #{(ranking[idx].first / (spending_total * ranking[idx].last) * 100).round(2)}%" %></td>
+        <% ranking[idx][2...-1].each do |arr| %>
+          <td class="results"><%= "#{arr.first}: #{arr.last}" %></td>
+        <% end %>
         </tr>
       <% end %>
     </tbody>
   </table>
+  <br>
 </div>

@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="title">Rewards Points Values</h1>
+  <h3>Value in Cents per Point</h3>
+  <hr>
+  <hr>
+  <form class="points" method="post" action="/save_points_values">
+    <% keys = [] %>
+    <% points_values.each_pair do |k, v| %>
+      <% keys.append(k) %>
+      <% depth = 0 %>
+      <% if v.instance_of?(::Hash) %>
+        <div class="points" style="margin-left:<%=depth * 20%>px;"><%=k%>:</div>
+        <% depth += 1 %>
+        <%= erb :points_category, layout: false, locals: {hash: v, depth:, keys:} %>
+        <% keys.pop %>
+        <% depth -= 1 %>
+      <% else %>
+        <label style="margin-left:<%=depth * 20%>px;"><%=k%>: </label>
+        <input class="points" type="text" id="<%=keys.join('_')%>" name="<%=keys.join('_')%>" value="<%=v%>"><br>
+        <% keys.pop %>
+      <% end %>
+    <% end %>
+    <br>
+    <input class="button" type="submit" value="save">
+  </form>
+  <br>
+  <br>
+  <br>
+</div>

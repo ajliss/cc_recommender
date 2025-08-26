@@ -11,13 +11,13 @@
       <% if v.instance_of?(::Hash) %>
         <div style="margin-left:<%=depth * 20%>px;"><%=k%>:</div>
         <% depth += 1 %>
-        <%= erb :category, layout: false, locals: {hash: v, depth:, keys:} %>
-        <%keys.pop%>
+        <%= erb :spending_category, layout: false, locals: {hash: v, depth:, keys:} %>
+        <% keys.pop %>
         <% depth -= 1 %>
       <% else %>
         <label style="margin-left:<%=depth * 20%>px;"><%=k%>: </label>
-        <input type="text" id="<%=keys.join('_')%>" name="<%=keys.join('_')%>" value="<%=v%>"><br>
-        <%keys.pop%>
+        <input class="spending" type="text" id="<%=keys.join('_')%>" name="<%=keys.join('_')%>" value="<%=v%>"><br>
+        <% keys.pop %>
       <% end %>
     <% end %>
     <br>
