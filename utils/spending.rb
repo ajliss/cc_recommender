@@ -16,7 +16,7 @@ module Utils
           'General' => 0,
           'Apple Pay' => 0
         },
-        'Entertainment' => 20,
+        'Entertainment' => 0,
         'Miscellaneous' => {
           'Apple Pay' => 0,
           'General' => 0
