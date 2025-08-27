@@ -10,6 +10,9 @@
   "Streaming": {
     "General": 0.031
   },
+  "Online Shopping": {
+    "Groceries": 0.03
+  },
   "Travel": {
     "Airlines": {
       "Generic": {

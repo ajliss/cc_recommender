@@ -25,7 +25,7 @@ module Utils
           'Amazon.com' => 0,
           'Walmart.com' => 0,
           'Online Retail' => 0,
-          'Groceries.com' => 0,
+          'Groceries' => 0,
           'Target' => 0
         },
         'Streaming' => {
