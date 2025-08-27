@@ -3,6 +3,9 @@
     <h2 class="title">
       Calculate Credit Card Rewards
     </h2>
+    <div>
+      Fill out your spending aand calculate your rewards!
+    </div>
   <table>
     <form method="get" action="/calculate_rewards">
     <tr>
@@ -38,7 +41,7 @@
   <% if results%>
   <h3 class="title">Results</h3>
     <% results.first.each_pair do |name, ranking|%>
-       <%= erb :results, locals: { name:, ranking:, spending_total: results.last} %>
+      <%= erb :results, locals: { name:, ranking:, spending_total: results.last} %>
     <% end%>
   <% end %>
 </section>

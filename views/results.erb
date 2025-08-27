@@ -17,7 +17,8 @@
         <tr class="results">
           <td class="results"><%= "$#{ranking[idx].first}" %></td>
           <td class="results"><%= "#{ranking[idx][1]}" %></td>
-          <td class="results"><%= "Rate: #{(ranking[idx].first / (spending_total * ranking[idx].last) * 100).round(2)}%" %></td>
+          <% rate = spending_total.zero? ? 0 : (ranking[idx].first / (spending_total * ranking[idx].last) * 100).round(2)%>
+          <td class="results"><%= "Rate: #{rate}%" %></td>
           <% ranking[idx][2...-1].each do |arr| %>
             <td class="results"><%= "#{arr.first}: $#{arr.last}" %></td>
           <% end %>
