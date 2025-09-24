@@ -467,9 +467,9 @@ class RewardsCalculatorV4Web
       'three_year_ranking' => [],
       'five_year_ranking' => [],
       'ten_year_ranking' => [],
-      'one_year_ranking_no_subs' => [],
-      'three_year_ranking_no_subs' => [],
-      'ten_year_ranking_no_subs' => []
+      'one_year_ranking_no_sign_up_bonus' => [],
+      'three_year_ranking_no_sign_up_bonus' => [],
+      'ten_year_ranking_no_sign_up_bonus' => []
     }
 
     reward_hashes.each do |rewards_obj|
@@ -477,9 +477,9 @@ class RewardsCalculatorV4Web
       rankings['three_year_ranking'] << build_rewards_report_line(3, true, rewards_obj)
       rankings['five_year_ranking'] << build_rewards_report_line(5, true, rewards_obj)
       rankings['ten_year_ranking'] << build_rewards_report_line(10, true, rewards_obj)
-      rankings['one_year_ranking_no_subs'] << build_rewards_report_line(1, false, rewards_obj)
-      rankings['three_year_ranking_no_subs'] << build_rewards_report_line(3, false, rewards_obj)
-      rankings['ten_year_ranking_no_subs'] << build_rewards_report_line(10, false, rewards_obj)
+      rankings['one_year_ranking_no_sign_up_bonus'] << build_rewards_report_line(1, false, rewards_obj)
+      rankings['three_year_ranking_no_sign_up_bonus'] << build_rewards_report_line(3, false, rewards_obj)
+      rankings['ten_year_ranking_no_sign_up_bonus'] << build_rewards_report_line(10, false, rewards_obj)
     end
 
     rankings.each_value do |val|
