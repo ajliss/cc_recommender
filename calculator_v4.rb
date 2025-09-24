@@ -107,6 +107,7 @@ class RewardsCalculatorV4
       # go through spending and assign it to each card by credit, cap and rate
       # and calculate all the rewards from that
       traverse_spending(combo, [], @spending)
+      add_general_credits(combo)
 
       reward_hash = build_rewards_hashes(combo)
 
@@ -363,6 +364,15 @@ class RewardsCalculatorV4
     end
   end
 
+  def add_general_credits(combo)
+    combo.each do |card|
+      next unless card.dig('Credits', 'General')
+
+      array = card['Credits']['General']
+      card['rewards']['total'][1] += determine_value(array.first, array[6], array[5])
+    end
+  end
+
   def build_rewards_hashes(combo)
     # combos.map do |combo|
     combo = sort_by_rewards(combo)
@@ -387,10 +397,6 @@ class RewardsCalculatorV4
     total_rewards = 0
     combo.each do |card|
       total_rewards += card['rewards']['total'].last
-      next unless card.dig('Credits', 'General')
-
-      array = card['Credits']['General']
-      total_rewards += determine_value(array.first, array[6], array[5])
     end
     total_rewards
   end
